@@ -7,11 +7,11 @@ rvm:
 - 1.9.3
 before_script:
 - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
-- bundle execrake setup_github_pages[$REPO_URL]
+- bundle exec rake setup_github_pages[$REPO_URL]
 script:
-- bundle execrake generate
+- bundle exec rake generate
 after_script:
-- bundle execrake deploy
+- bundle exec rake deploy
 env:
   global:
   - GH_REPO="joluet/joluet.github.io"
