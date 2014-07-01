@@ -1,5 +1,19 @@
+---
+branches:
+  only:
+  - source
 language: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
-script: bundle exec rake install; bundle exec rake generate
+- 1.9.3
+before_script:
+- export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
+- rake setup_github_pages[$REPO_URL]
+script:
+- rake generate
+after_script:
+- rake deploy
+env:
+  global:
+  - GH_REPO="joluet/joluet.github.io"
+  - secure: "vKuUEXwZ4aBW46HLAacpK0H/wVVDJZcT600qv8U+xVUrg3Fh258psIcBzWb0vqt89e+IOlcrISFNczNJHSUTGpjv6tYKqN0dMWKuUG0FP9P7IXGbJb9SiziqA7jEedegrnn1bbuwxXgYbn/mI4N/KfqLmS+TLFZ90fMDByA9fq0="
+
