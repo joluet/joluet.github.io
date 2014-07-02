@@ -6,8 +6,8 @@ language: ruby
 rvm:
 - 1.9.3
 before_script:
-  git config --global credential.helper "store --file=~/.git-credentials"
-  echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
+- git config --global credential.helper "store --file=~/.git-credentials"
+- echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
 - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
 - git config --global user.email "jonas@luethke.net"
 - git config --global user.name "joluet"
