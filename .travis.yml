@@ -1,4 +1,3 @@
----
 branches:
   only:
   - source
@@ -19,5 +18,4 @@ after_script:
 env:
   global:
   - GH_REPO="joluet/joluet.github.io"
-  - secure: "vKuUEXwZ4aBW46HLAacpK0H/wVVDJZcT600qv8U+xVUrg3Fh258psIcBzWb0vqt89e+IOlcrISFNczNJHSUTGpjv6tYKqN0dMWKuUG0FP9P7IXGbJb9SiziqA7jEedegrnn1bbuwxXgYbn/mI4N/KfqLmS+TLFZ90fMDByA9fq0="
-
+  - secure: QDz0q9MUa1A6149Fkm2qXOqwK6yIhk/RY1c0Fqmw4lOpTetrr9civo0T6SkhuUb24bGMEr4mS9cNcB4Ca3sjeLr8vDdq0hwqeZ95/1M53dyMPLWf18+rUArlZySQDdRCwOoWcT3Wc0MO9KHWQzCKxh+o85ktaID3zLfulUcyMvQ=
