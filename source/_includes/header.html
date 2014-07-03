@@ -13,8 +13,13 @@
 {% include custom/header.html %}
 {% if site.title %}
 <h1>
-<a href="/">{{ site.title }}</a>
+  <a href="/">{{ site.title }}</a>
 </h1>
+{% endif %}
+{% if site.subtitle %}
+<p class="subtitle">
+  {{ site.subtitle }}
+</p>
 {% endif %}
 <nav id="main-nav">{% include navigation.html %}</nav>
 <nav id="sub-nav">
