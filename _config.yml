@@ -3,9 +3,10 @@
 # ----------------------- #
 
 url: http://joluet.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Jonas Lüthke
+subtitle:
+author: Jonas Lüthke
+email_md5: f7ea9151e32a2a50f085cc5f94233656
 simple_search: https://www.google.com/search
 description:
 
