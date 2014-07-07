@@ -37,11 +37,23 @@ The key class of Rx is the _Observable_ that represents a model object for async
 Practically, this means that Observables are aimed fulfill asynchronous tasks like e.g. making an http call. The cool thing about Observables is the possibility to compose them to create new more powerful Observables. See the [RxJava Wiki](https://github.com/Netflix/RxJava/wiki) for a detailed introduction.
 
 ## Retrofit and RxJava
-I won't go into detail about Retrofit here. See [square.github.io/retrofit](http://square.github.io/retrofit/) for an introduction. Retrofit integrates RxJava and one can define api calls that return Observables:
+I won't go into detail about Retrofit here. See [square.github.io/retrofit](http://square.github.io/retrofit/) for an introduction. The point is Retrofit integrates RxJava and one can easily define api calls that return Observables using Retrofit:
 ```java
 @GET("/user/login.json") 
 Observable<SuccessResponse> login();
+
+@GET("/user/user.json") 
+Observable<UserState> getUserState();
+
+
 ```
 Thus, we don't even need to create our own Observables. We can just compose the Observables provided by Retrofit. There are many possible compositions as described in the [wiki](https://github.com/Netflix/RxJava/wiki/Observable). In our case the _flatMap_ as well as the _combineLatest_ operators have been very useful:
 
-[combineLatest(sourceObservables, combineFunction)](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items from the source Observables.
+[`Observable<R> flatMap(Func1<? super T,? extends Observable<? extends R>> func)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#flatMap(rx.functions.Func1)) creates an Observable that emits...
+
+
+[`<T,R> Observable<R> combineLatest(java.util.List<? extends Observable<? extends T>> sources, FuncN<? extends R> combineFunction)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items that have be emitted by the source Observables.
+
+
+                                                      
+                                                      
