@@ -25,5 +25,7 @@ api.requestRide(new Callback<UserStatus>() {
 ```
 RxJava allows us to shorten this piece of code to:
 ```java
-eventAPI.requestRide().flatMap(status -> api.getUserStatus()).subscribe(onComplete, onError); // with callbacks onComplete and onError
+eventAPI.requestRide().
+	flatMap(status -> api.getUserStatus()).		// chain calls using flatMap
+    subscribe(onComplete, onError); 			// callbacks onComplete and onError
 ```
