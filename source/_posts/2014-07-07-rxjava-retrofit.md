@@ -37,4 +37,9 @@ The key class of Rx is the _Observable_ that represents a model object for async
 Practically, this means that Observables are aimed fulfill asynchronous tasks like e.g. making an http call. The cool thing about Observables is the possibility to compose them to create new more powerful Observables. See the [RxJava Wiki](https://github.com/Netflix/RxJava/wiki) for a detailed introduction.
 
 ## Retrofit and RxJava
-I won't go into detail about Retrofit here. See [square.github.io/retrofit](http://square.github.io/retrofit/) for an introduction. 
+I won't go into detail about Retrofit here. See [square.github.io/retrofit](http://square.github.io/retrofit/) for an introduction. Retrofit integrates RxJava and one can define api calls that return Observables:
+```Jjava
+@GET("/user/login.json") 
+Observable<SuccessResponse> login();
+```
+Thus, one doesn 't
