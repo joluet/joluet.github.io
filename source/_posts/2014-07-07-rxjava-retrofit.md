@@ -42,4 +42,6 @@ I won't go into detail about Retrofit here. See [square.github.io/retrofit](http
 @GET("/user/login.json") 
 Observable<SuccessResponse> login();
 ```
-Thus, we don't even need to create our own Observables. We can just compose the Observables provided by Retrofit. There are many possible compositions as described in the [wiki](https://github.com/Netflix/RxJava/wiki/Observable). In our case the _flatMap_ as well as the _combineLast_ have been very useful.
+Thus, we don't even need to create our own Observables. We can just compose the Observables provided by Retrofit. There are many possible compositions as described in the [wiki](https://github.com/Netflix/RxJava/wiki/Observable). In our case the _flatMap_ as well as the _combineLatest_ operators have been very useful:
+
+[combineLatest(sourceObservables, combineFunction)](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items from the source Observables.
