@@ -1,6 +1,6 @@
 ---
 layout: post
-dat: 2014-07-07 15:15
+date: 2014-07-07 15:15
 published: true
 title: RxJava in combination with Retrofit to chain REST calls
 comments: true
