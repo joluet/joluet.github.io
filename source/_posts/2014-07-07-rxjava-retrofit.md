@@ -58,4 +58,4 @@ api.signUp(signUpData).
 ```
 The original Observable does the sign up. After the successful sign up the second Observable tries to sign in the user. So the flatMap operator is used to chain the two network calls.
 
-[`<T,R> Observable<R> combineLatest(java.util.List<? extends Observable<? extends T>> sources, FuncN<? extends R> combineFunction)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items that have be emitted by the source Observables.
+[`<T,R> Observable<R> combineLatest(java.util.List<? extends Observable<? extends T>> sources, FuncN<? extends R> combineFunction)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items that have be emitted by the source Observables. This is helpful when you want to execute multiple REST calls and only update the UI when all calls have finished.
