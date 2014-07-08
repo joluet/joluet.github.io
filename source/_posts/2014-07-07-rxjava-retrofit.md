@@ -2,13 +2,13 @@
 layout: post
 date: "2014-07-07 15:15"
 published: true
-title: RxJava in combination with Retrofit to chain REST calls
+title: Using RxJava and Retrofit to compose REST calls in an elegant way
 comments: true
 categories: rxJava
 ---
 
 ## Example
-At WunderCar our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication layer since it provides a very easy and clean way to communicate with a REST interface.
+At WunderCar our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication client since it provides a very easy and clean way to communicate with a REST interface.
 Due to our architecture we often have to chain api calls. For example we need to fetch the user state after the user has been successfully logged in. This can lead to ugly nested calls:
 
 ```java
