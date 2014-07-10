@@ -30,7 +30,7 @@ eventAPI.requestRide().
 	flatMap(status -> api.getUserStatus()).		// chain calls using flatMap
     subscribe(onComplete, onError);	 			// callbacks onComplete and onError
 ```
-Note: I use lambda expressions in the RxJava code snippets. This makes the code much more readable. Unfortunately they are only available in Java 8. To be able to use them in Android with Java 7 you have to include the retrolambda library like explained [here](http://zserge.com/blog/android-lambda.html).
+Note: I use lambda expressions in the code snippets. This makes the code much more readable. Unfortunately they are only available in Java 8. To be able to use them in Android with Java 7 you have to include the retrolambda library like explained [here](http://zserge.com/blog/android-lambda.html).
 
 ## RxJava
 RxJava is an open source library that implements the _[Reactive Extensions(Rx)](https://rx.codeplex.com/)_.
@@ -45,17 +45,46 @@ Observable<SuccessResponse> login();
 
 @GET("/user.json") 
 Observable<UserState> getUserState();
-
-
 ```
 Thus, we don't even need to create our own Observables. We can just compose the Observables provided by Retrofit. There are many possible compositions as described in the [wiki](https://github.com/Netflix/RxJava/wiki/Observable). In our case the _flatMap_ as well as the _combineLatest_ operators have been very useful:
 
-[`Observable<R> flatMap(Func1<? super T,? extends Observable<? extends R>> func)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#flatMap(rx.functions.Func1)) creates an Observable by applying a function that you supply to each item emitted by the original Observable. The function intself is an Observable. After applying the function the items are emitted.
+[`Observable<R> flatMap(Func1<? super T,? extends Observable<? extends R>> func)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#flatMap(rx.functions.Func1)) creates an Observable by applying a function that you supply to each item emitted by the original Observable. The function intself takes the items emitted by the original Observable as input and returns a new Observable.
 A very simple example where the supplied function doesn't use the items emitted by the original Observable.
 ```java
 api.signUp(signUpData).
 	flatMap(successResponse -> eventAPI.emailSignIn(signUpData.email, signUpData.password))
 ```
-The original Observable does the sign up. After the successful sign up the second Observable tries to sign in the user. So the flatMap operator is used to chain the two network calls.
+In this example the original Observable does the sign up. After the successful sign up the second Observable tries to sign in the user. So the flatMap operator is used to chain the two network calls.
 
 [`<T,R> Observable<R> combineLatest(java.util.List<? extends Observable<? extends T>> sources, FuncN<? extends R> combineFunction)`](http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)) creates an Observable that emits the latest items that have be emitted by the source Observables. This is helpful when you want to execute multiple REST calls and only update the UI when all calls have finished.
+```java
+Observable.combineLatest(api.fetchUserProfile(), api.getUserState(), 
+(user, userStatus) -> new Pair<>(user, userStatus));
+```
+This simple example executes two asynchronous http calls. When both calls have returned their results are emitted as a pair.
+
+## Threads and Lifecycle
+If you don't assign a thread to subscribe on Observables will execute their code in the main thread. This is often not what you want. So be sure to use `subscribeOn()` to define a scheduler that determines the thread to subscribe on. You can for example call `subscribeOn(Schedulers.from(AsyncTask.THREAD_POOL_EXECUTOR))`. In addition you should define the thread for observation by calling e.g.  `observeOn(AndroidSchedulers.mainThread())`.
+
+In Android we also have to think about the activity or fragment lifecycle. Often we want to change the UI when the an Observable emits new items. This is of course only possible if the fragment or activity is still alive. So we have to be sure to unsubscribe from the Observable when the fragment or activity is destroyed at the latest.
+
+Actually RxJava provides a convinience function that deals with threading as well as lifecycle issues:
+```java
+AndroidObservable.bindActivity(Activity activity, Observable<T> source)
+```
+> This helper will schedule the given sequence to be observed on the main UI thread and ensure that no notifications will be forwarded to the activity in case it is scheduled to finish.
+>
+> -- <cite>excerpt from the associated source code comment</cite>
+
+
+
+
+
+
+
+
+
+
+
+
+
