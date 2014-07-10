@@ -64,11 +64,11 @@ Observable.combineLatest(api.fetchUserProfile(), api.getUserState(),
 This simple example executes two asynchronous http calls. When both calls have returned their results are emitted as a pair.
 
 ## Threads and Lifecycle
-If you don't assign a thread to subscribe on Observables will execute their code in the main thread. This is often not what you want. So be sure to use `subscribeOn()` to define a scheduler that determines the thread to subscribe on. You can for example call `subscribeOn(Schedulers.from(AsyncTask.THREAD_POOL_EXECUTOR))`. In addition you should define the thread for observation by calling e.g.  `observeOn(AndroidSchedulers.mainThread())`.
+If you don't assign a thread to subscribe on Observables will just execute their code in the main thread. This is often not what you want. So be sure to use `subscribeOn()` to define a scheduler that determines the thread to subscribe on, e.g. `subscribeOn(Schedulers.from(AsyncTask.THREAD_POOL_EXECUTOR))`. In addition you should define the thread for observation by calling e.g.  `observeOn(AndroidSchedulers.mainThread())`.
 
 In Android we also have to think about the activity or fragment lifecycle. Often we want to change the UI when the an Observable emits new items. This is of course only possible if the fragment or activity is still alive. So we have to be sure to unsubscribe from the Observable when the fragment or activity is destroyed at the latest.
 
-Actually RxJava provides a convinience function that deals with threading as well as lifecycle issues:
+Actually RxJava provides a convinience helper class that deals with threading prevents some lifecycle issues:
 ```java
 AndroidObservable.bindActivity(Activity activity, Observable<T> source)
 ```
@@ -78,6 +78,7 @@ AndroidObservable.bindActivity(Activity activity, Observable<T> source)
 >
 > -- <cite>excerpt from the associated source code comment</cite>
 
+So my reccomendation is to use the `AndroidObservable` helper to bind subscriptions to fragments or activities and to make sure that subscriptions are unsubscribed from in `onDestroy` at the latest.
 
 
 
