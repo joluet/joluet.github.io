@@ -74,7 +74,7 @@ AndroidObservable.bindActivity(Activity activity, Observable<T> source)
 ```
 > This helper will schedule the given sequence to be observed on the main UI thread and ensure that no notifications will be forwarded to the activity in case it is scheduled to finish.
 >
->You should unsubscribe from the returned Observable in onDestroy at the latest, in order to not leak the activity or an inner subscriber.
+> You should unsubscribe from the returned Observable in onDestroy at the latest, in order to not leak the activity or an inner subscriber.
 >
 > -- <cite>excerpt from the associated source code comment</cite>
 
