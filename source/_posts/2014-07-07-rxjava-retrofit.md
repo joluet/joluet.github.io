@@ -8,8 +8,8 @@ categories: rxJava
 ---
 
 ## Example
-At WunderCar our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication client since it provides a very easy and clean way to communicate with a REST interface.
-Due to our architecture we often have to chain api calls. For example we need to fetch the user state after the user has been successfully logged in. This can lead to ugly nested calls:
+At WunderCar our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication client since it provides a very easy and clean way to communicate with REST interfaces.
+Due to our architecture we often have to chain api calls. For example we need to fetch the user state after the user has been successfully logged in. Using callbacks, this can lead to ugly nested calls:
 
 ```java
 api.login(new Callback<ResponseBody>() {
@@ -30,12 +30,12 @@ eventAPI.requestRide().
 	flatMap(status -> api.getUserStatus()).		// chain calls using flatMap
     subscribe(onComplete, onError);	 			// callbacks onComplete and onError
 ```
-Note: I use lambda expressions in the code snippets. This makes the code much more readable. Unfortunately they are only available in Java 8. To be able to use them in Android with Java 7 you have to include the retrolambda library like explained [here](http://zserge.com/blog/android-lambda.html).
+Note: I use lambda expressions in the code snippets. This makes the code much more readable. Unfortunately, they are only available in Java 8. To be able to use them in Android with Java 7 you have to include the retrolambda library like explained [here](http://zserge.com/blog/android-lambda.html).
 
 ## RxJava
 RxJava is an open source library that implements the _[Reactive Extensions(Rx)](https://rx.codeplex.com/)_.
 The key class of Rx is the _Observable_ that represents a model object for asynchronous data streams. Observables can be easily composed using different operators that are capable of filtering, selecting, transforming, combining and composing Observables.
-Practically, this means that Observables are aimed fulfill asynchronous tasks like e.g. making an http call. The cool thing about Observables is the possibility to compose them to create new more powerful Observables. See the [RxJava Wiki](https://github.com/Netflix/RxJava/wiki) for a detailed introduction.
+Practically, this means that Observables are aimed to fulfill asynchronous tasks like e.g. making an http call. The cool thing about Observables is the possibility to compose them to create new and more powerful Observables. See the [RxJava Wiki](https://github.com/Netflix/RxJava/wiki) for a detailed introduction.
 
 ## Retrofit and RxJava
 I won't go into detail about Retrofit here. See [square.github.io/retrofit](http://square.github.io/retrofit/) for an introduction. The point is Retrofit integrates RxJava and one can easily define api calls that return Observables using Retrofit:
@@ -79,15 +79,3 @@ AndroidObservable.bindActivity(Activity activity, Observable<T> source)
 > -- <cite>excerpt from the associated source code comment</cite>
 
 So my reccomendation is to use the `AndroidObservable` helper to bind subscriptions to fragments or activities and to make sure that subscriptions are unsubscribed from in `onDestroy` at the latest.
-
-
-
-
-
-
-
-
-
-
-
-
