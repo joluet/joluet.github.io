@@ -24,7 +24,7 @@ api.login(new Callback<ResponseBody>() {
 
 					...
 ```
-RxJava allows us to shorten this piece of code to:
+[RxJava](https://github.com/Netflix/RxJava) allows us to shorten this piece of code to:
 ```java
 eventAPI.requestRide().
 	flatMap(status -> api.getUserStatus()).		// chain calls using flatMap
