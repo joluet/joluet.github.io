@@ -4,7 +4,7 @@ date: "2014-07-07 15:15"
 published: true
 title: Using RxJava and Retrofit to compose REST calls in an elegant way
 comments: true
-categories: "Android, rxJava, retrofit"
+categories: "android,rxjava,retrofit"
 ---
 
 ## Example
