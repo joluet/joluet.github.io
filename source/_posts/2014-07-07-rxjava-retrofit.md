@@ -30,6 +30,7 @@ eventAPI.requestRide().
 	flatMap(status -> api.getUserStatus()).		// chain calls using flatMap
     subscribe(onComplete, onError);	 			// action callbacks onComplete and onError
 ```
+<!--more-->
 Note: I use lambda expressions in the code snippets. This makes the code much more readable. Unfortunately, they are only available in Java 8. To be able to use them in Android with Java 7 you can just include the retrolambda library like explained [here](http://zserge.com/blog/android-lambda.html).
 
 ## RxJava
