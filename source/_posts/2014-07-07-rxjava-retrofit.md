@@ -9,7 +9,7 @@ categories: "android,rxjava,retrofit"
 
 This article shows how to use [Retrofit](http://square.github.io/retrofit/) together with [RxJava](https://github.com/Netflix/RxJava) and emphasizes the possiblity to combine and chain REST calls using rxObservables to __avoid ugly callback chains__. It gives you a nice example of using RxJava in order to write less and cleaner code.
 <!--more-->
-## Example - Avoid nested callbacks
+## Example
 At [WunderCar](http://www.wundercar.org) our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication client since it provides a very easy and clean way to communicate with REST interfaces.
 Due to our architecture we often have to chain api calls. For example we need to fetch the state of a user _after_ the user has been successfully logged in. Using callbacks, this can lead to ugly nested callback chains:
 
