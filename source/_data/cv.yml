@@ -50,18 +50,13 @@ professional:
    projects:
 
     - name: Moovel
-      link: 
-      description: 
-      skills:
-       - Hardcore C
-       - Hardcore DSP
+      link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
-    - name: First Company Website
-      link: http://acme.com/
-      description: Learned HTML and rocked everyone's world.
-      skills:
-       - HTML
-       - Not CSS
+    - name: car2go
+      link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
+
+    - name: car2go Black
+      link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
 
  - name: WunderCar Mobility Soultions GmbH
