@@ -59,12 +59,12 @@ professional:
    end: 08/2014
    title: Android Developer
    summary:
-   projects:
    skills: 
     - Continuous Integration
     - Scrum
     - Testing
 
+   projects:
     - name: WunderCar
       link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
@@ -74,7 +74,12 @@ professional:
    start: 10/2013
    end: 04/2014
    title: Android Developer
-   summary: 
+   summary: MyTaxi is one of the most successful startups in Germany. The main product is an app for calling a taxi. I was working in an international product team that develops apps for the Daimler Mobility Solutions GmbH in the car sharing and public transportation sector.
+   skills: 
+    - Continuous Integration
+    - Scrum
+    - Testing
+
    projects:
 
     - name: Moovel
