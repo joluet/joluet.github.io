@@ -1,63 +1,43 @@
-name: John Doe
-home: jdoe.com
+name: Jonas Lüthke
+title: Android Developer
 email: jdoe@gmail.com
 blog: http://joluet.github.io
 linkedin: fr.linkedin.com/pub/jonas-lüthke/97/b02/7a/
 
 summary:
- text: Magic maker and a hero of yours.
-
-objective:
- text: Seeking to contribute blood, sweat, and tears. That is all.
+ text: I am a passionate Software Developer.
 
 skills:
- - name: Languages
+ - name: IDE, build tools 
    items:
-    - name: JavaScript
-    - name: Python
-    - name: Java
-    - name: C++
-    - name: SQL
- - name: Backend
+    - name: Android Studio
+    - name: Gradle
+    - name: Eclipse
+    - name: Ant
+ - name: Continuous Integration
    items:
-    - name: Node
-    - name: Django
- - name: Frontend
-   items:
-    - name: AngularJS
-    - name: BackboneJS
-    - name: D3
-    - name: JQuery
-    - name: ExtJS
- - name: Standards
-   items:
-    - name: Websockets
-    - name: HTML5 Canvas
-    - name: CSS3
- - name: Testing
-   items:
-    - name: Mocha
-    - name: Karma
-
- - name: Databases
-   items:
-    - name: MongoDB
-    - name: PostgreSQL
-    - name: PostGIS
-    - name: Redis
- - name: Platforms
-   items:
-    - name: AWS
-    - name: Cloud Foundry
-    - name: Digital Ocean
- - name: Mobile
-   items:
-    - name: Android
-    - name: HTML5 Hybrid
- - name: CM
+    - name: Jenkins
+    - name: Travis CI
+ - name: VCS
    items:
     - name: Git
-    - name: Subversion
+ - name: Testing
+   items:
+    - name: Espresso
+    - name: Robotium
+    - name: Calabash
+    - name: Robolectric
+    - name: Mockito
+
+ - name: Others
+   items:
+    - name: Robo Guice
+    - name: RxJava
+    - name: Retrofit
+    - name: GCM
+    - name: MQTT
+    - name: SQLITE
+
 
 professional:
  - name: Acme Inc.
