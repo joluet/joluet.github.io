@@ -44,14 +44,23 @@
 </head>
 <body>
 <div class="container">
+    <table border="0">
+    <tr>
+    <td>
+	<img src="{{ root_url }}/cv/mugshot-wo-android_smaller.jpg">
+    </td>
+    <td>
     <div class="text-center nohref"><h1>{{ site.data.cv.name }}</h1>
-	<img src="{{ root_url }}/cv/icon_4424.png.jpg" style="width:25px;height:25px>
+	<img src="{{ root_url }}/cv/icon_4424.png.jpg" style="width:25px;height:25px">
 	<a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a><br/>
-	<img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px>
+	<img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px">
 	<a href="mailto:{{ site.data.cv.linkedin }}"> LinkedIn</a><br/>
-	<img src="{{ root_url }}/cv/icon_19489.png" style="width:25px;height:25px>
+	<img src="{{ root_url }}/cv/icon_19489.png" style="width:25px;height:25px">
 	<a href="{{ site.data.cv.blog }}"> Dev Blog</a><br/>
     </div>
+    </td>
+    </tr>
+    </table>
 
     <h2>Summary</h2>
     <p> {{ site.data.cv.summary.text }}</p>
