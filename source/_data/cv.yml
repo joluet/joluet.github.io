@@ -14,13 +14,6 @@ skills:
     - name: Gradle
     - name: Eclipse
     - name: Ant
- - name: Continuous Integration
-   items:
-    - name: Jenkins
-    - name: Travis CI
- - name: VCS
-   items:
-    - name: Git
  - name: Testing
    items:
     - name: Espresso
@@ -37,7 +30,14 @@ skills:
     - name: GCM
     - name: MQTT
     - name: SQLITE
-
+ - name: Continuous Integration
+   items:
+    - name: Jenkins
+    - name: Travis CI
+ - name: VCS
+   items:
+    - name: Git
+    - name: Git Flow
 
 professional:
  - name: Acme Inc.
@@ -82,10 +82,16 @@ professional:
 
 education:
  colleges:
-  - name: Buford University
-    link: http://buu.edu/
-    year: 1966
-    degree: BSCS
+  - name: Hamburg University of Technology
+    field: Computer Science and Engineering
+    link: http://www.tuhh.de
+    year: 2011
+    degree: Bacherlor of Science
+  - name: Hamburg University of Technology
+    field: Computer Science and Engineering
+    link: http://www.tuhh.de
+    year: 2013
+    degree: Master of Science
 
 certsAndAwards:
  - name: Advanced Rubber Necking
