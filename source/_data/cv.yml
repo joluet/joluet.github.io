@@ -49,6 +49,34 @@ professional:
    summary: 
    projects:
 
+    - name: GoodBarber App Engine
+
+
+ - name: WunderCar Mobility Soultions GmbH
+   link: http://www.wundercar.org
+   location: Hamburg, Germany
+   start: 04/2014
+   end: 08/2014
+   title: Android Developer
+   summary:
+   projects:
+   skills: 
+    - Continuous Integration
+    - Scrum
+    - Testing
+
+    - name: WunderCar
+      link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
+
+ - name: MyTaxi (IntelligentApps GmbH)
+   link: https://www.mytaxi.com
+   location: Hamburg, Germany
+   start: 10/2013
+   end: 04/2014
+   title: Android Developer
+   summary: 
+   projects:
+
     - name: Moovel
       link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
@@ -57,23 +85,6 @@ professional:
 
     - name: car2go Black
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
-
-
- - name: WunderCar Mobility Soultions GmbH
-   link: http://buu.edu
-   location: Elseware, OK
-   start: 12/1966
-   end: 10/1979
-   title: Lab Rat
-   summary: Responsible for labs and stuff.
-   projects:
-
-    - name: Punch Card Optimization
-      description: Since I coded like the wind (even then), I needed a better way to write software
-      skills:
-       - Diplomacy
-       - Reading
-       - Writing
 
 
 education:
