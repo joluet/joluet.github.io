@@ -45,8 +45,12 @@
 <body>
 <div class="container">
     <div class="text-center nohref"><h1>{{ site.data.cv.name }}</h1>
-        <span class="glyphicon glyphicon-home"></span><a href="http://{{ site.data.cv.home }}"> {{ site.data.cv.home }}</a><br/>
-        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a>
+	<img src="{{ root_url }}/cv/icon_4424.png.jpg" style="width:25px;height:25px>
+	<a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a><br/>
+	<img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px>
+	<a href="mailto:{{ site.data.cv.linkedin }}"> LinkedIn</a><br/>
+	<img src="{{ root_url }}/cv/icon_19489.png" style="width:25px;height:25px>
+	<a href="{{ site.data.cv.blog }}"> Dev Blog</a><br/>
     </div>
 
     <h2>Summary</h2>
