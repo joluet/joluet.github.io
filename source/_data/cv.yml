@@ -40,17 +40,18 @@ skills:
     - name: Git Flow
 
 professional:
- - name: Acme Inc.
-   link: http://acme.com
-   location: Nowhere, NY
-   start: 10/1979
+ - name: GoodBarber (DuoApps SARL)
+   link: http://www.goodbarber.com
+   location: Ajaccio, France
+   start: 09/2014
    end: Present
-   title: Code Monkey
-   summary: Been on this sinking ship since before the internet.
+   title: Android Developer
+   summary: 
    projects:
 
-    - name: Koala DSP
-      description: Implemented a unique DSP algorithm to mimic koala bears.
+    - name: Moovel
+      link: 
+      description: 
       skills:
        - Hardcore C
        - Hardcore DSP
@@ -63,7 +64,7 @@ professional:
        - Not CSS
 
 
- - name: Buford University
+ - name: WunderCar Mobility Soultions GmbH
    link: http://buu.edu
    location: Elseware, OK
    start: 12/1966
@@ -86,19 +87,10 @@ education:
     field: Computer Science and Engineering
     link: http://www.tuhh.de
     year: 2011
-    degree: Bacherlor of Science
+    degree: Bachelor of Science
   - name: Hamburg University of Technology
     field: Computer Science and Engineering
     link: http://www.tuhh.de
     year: 2013
     degree: Master of Science
-
-certsAndAwards:
- - name: Advanced Rubber Necking
-   year: 2000
- - name: Crimes and Indigestion
-   year: 2007
-
-clearance:
- name: Aspiring
 
