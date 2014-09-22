@@ -80,9 +80,8 @@
 
     {% for skill in site.data.cv.skills %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            {% if thecycle == 'odd' %}
-                <div class="row">
-                <div class="col-xs-1">
+            <div class="row">
+            <div class="col-xs-1">
 
             <h5 style="display: inline;">{{ skill.name }}</h5>:
             
