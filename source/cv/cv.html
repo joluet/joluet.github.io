@@ -76,7 +76,8 @@
     {% for item in site.data.cv.professional %}
     <div class="row">
         <div class="col-xs-6 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
-        </h4>
+        </h4></br>
+        <h5><em>{{ item.title }}</em></h5>
         </div>
         <div class="col-xs-6 text-right">
             <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
@@ -85,7 +86,6 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <h5><em>{{ item.title }}</em></h5>
 
             <p>{{ item.summary }}</p>
 
