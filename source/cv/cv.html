@@ -29,19 +29,6 @@
         .skills {
             margin-right: 1em;
         }
-
-        @media print {
-            /* In case you don't want the boxes on your printout... */
-            /*.label {*/
-            /*border: none;*/
-            /*}*/
-
-            /* Avoid printing hrefs when this class is applied */
-            /*.nohref a[href]:after {
-                content: "";
-            }*/
-		a:link:after, a:visited:after { content:" [" attr(href) "] "; }
-        }
     </style>
 </head>
 <body>
@@ -49,7 +36,7 @@
     <table border="0">
     <tr>
     <td>
-	<img src="{{ root_url }}/cv/me.jpg" style="width:100px;height:100px">
+	<img src="{{ root_url }}/cv/me.jpg" style="width:170px;height:170px">
     </td>
     <td>
     <div class="text-left"><h1>{{ site.data.cv.name }}</h1>
