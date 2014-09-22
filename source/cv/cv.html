@@ -40,9 +40,7 @@
             /*.nohref a[href]:after {
                 content: "";
             }*/
-		a[href]:after {
-		    content: none;
-		  }
+		a:link:after, a:visited:after { content:" [" attr(href) "] "; }
         }
     </style>
 </head>
