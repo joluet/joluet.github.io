@@ -58,7 +58,7 @@ professional:
    start: 04/2014
    end: 08/2014
    title: Android Developer
-   summary: WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US.
+   summary: WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br> Together with an other developer I developed the WunderCar Android app from scratch.
 
    skills: 
     - Continuous Integration
@@ -67,6 +67,7 @@ professional:
 
    projects:
     - name: WunderCar
+      description: A ride sharing app
       link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
  - name: MyTaxi (IntelligentApps GmbH)

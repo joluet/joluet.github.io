@@ -89,13 +89,11 @@
 
             <p>{{ item.summary }}</p>
 
-            <h4>Projects:</h4>
-
             {% for project in item.projects %}
             {% if project.link %}
-            <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a></h5>
+            <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
             {% else %}
-            <h5><strong>{{ project.name }}</strong></h5>
+            <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
             {% endif %}
             {% endfor %}
             {% for skill in item.skills %}
