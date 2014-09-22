@@ -82,30 +82,19 @@
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
             {% if thecycle == 'odd' %}
                 <div class="row">
-                <div class="col-xs-6">
-            {% endif %}
-
-            {% if thecycle == 'even' %}
-                <div class="col-xs-12">
-            {% endif %}
+                <div class="col-xs-1">
 
             <h5 style="display: inline;">{{ skill.name }}</h5>:
             
             </div>
 
-            {% if thecycle == 'odd' %}
-                <div class="col-xs-8">
-            {% endif %}
-
-            {% if thecycle == 'even' %}
-                <div class="col-xs-14">
-            {% endif %}
+            <div class="col-xs-5">
 
             {% for item in skill.items %}
                 <span class="label label-info skills"> {{ item.name }} </span>
             {% endfor %}
 
-                </div>
+            </div>
 
             {% if thecycle == 'even' %}
                 </div>
