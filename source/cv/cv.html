@@ -32,6 +32,7 @@
 
         .skills {
             margin-right: 1em;
+            font-size: 10pt;
         }
     </style>
 </head>
@@ -78,7 +79,7 @@
 
     <h5>{{ skill.name }}</h5>
     {% for item in skill.items %}
-    <span class="label label-default skills"> {{ item.name }} </span>
+    <span class="label label-info skills"> {{ item.name }} </span>
     {% endfor %}
 
     {% endfor %}
@@ -117,7 +118,7 @@
             {% endif %}
             {% endfor %}
             {% for skill in item.skills %}
-            <span class="label label-default skills"> {{ skill }} </span>
+            <span class="label label-info skills"> {{ skill }} </span>
             {% endfor %}
         </div>
     </div>
