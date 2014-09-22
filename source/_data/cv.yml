@@ -45,9 +45,12 @@ professional:
    end: Present
    title: Android Developer
    summarypoints: 
+     - App builder service
+     - Working on a highly customizable app
    projects:
 
     - name: GoodBarber App Engine
+      link: http://www.goodbarber.com
 
    skills: 
     - Scrum
@@ -62,7 +65,6 @@ professional:
     - Young startup founded in the end of 2013
     - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
     - International product team of six persons (one other senior Android developer)
-    - Took over a small code base that was developed by an outsourcing company
 
    skills: 
     - Scrum
