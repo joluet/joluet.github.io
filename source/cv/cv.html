@@ -79,20 +79,19 @@
     <h3>Skills Focus and Technical Expertise</h3>
 
     {% for skill in site.data.cv.skills %}
-
+    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    {% if thecycle == 'even' %}
+            <div class="col-xs-8">
+    {% endif %}
     <h5 style="display: inline;">{{ skill.name }}</h5>:
     {% for item in skill.items %}
-        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        {% if thecycle == 'even' %}
-            <div class="col-xs-8">
-        {% endif %}
         <span class="label label-info skills"> {{ item.name }} </span>
-        {% if thecycle == 'even' %}
-            </div>
-        {% endif %}
+        
     {% endfor %}
 
-    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    {% if thecycle == 'even' %}
+            </div>
+    {% endif %}
     {% if thecycle == 'even' %}
         </br>
     {% endif %}
