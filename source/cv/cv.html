@@ -22,9 +22,13 @@
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css' media='all'>
     <style>
         h1 {
-            font-family: 'Lusitana', serif;
-            font-size: 5em;
+            font-family: 'Lusitana', sans-serif;
+            font-size: 3em;
         }
+
+	td { 
+    	    padding: 10px;
+	}
 
         .skills {
             margin-right: 1em;
@@ -40,8 +44,8 @@
     </td>
     <td>
     <div class="text-left">
-        <h2>{{ site.data.cv.name }}</h2>
-        <h3>{{ site.data.cv.summary.text }}</h3>
+        <h1>{{ site.data.cv.name }}</h1>
+        <h4><em>{{ site.data.cv.summary.text }}</em></h4>
 	<img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
 	<a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a><br/>
 	<img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px">
