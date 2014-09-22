@@ -39,7 +39,9 @@
 	<img src="{{ root_url }}/cv/me.jpg" style="width:170px;height:170px">
     </td>
     <td>
-    <div class="text-left"><h1>{{ site.data.cv.name }}</h1>
+    <div class="text-left">
+        <h2>{{ site.data.cv.name }}</h2>
+        <h3>{{ site.data.cv.summary.text }}</h3>
 	<img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
 	<a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a><br/>
 	<img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px">
@@ -52,11 +54,6 @@
     </td>
     </tr>
     </table>
-
-    <h3>Summary</h3>
-    <p> {{ site.data.cv.summary.text }}</p>
-
-    <hr/>
 
     <h3>Skills Focus and Technical Expertise</h3>
 
