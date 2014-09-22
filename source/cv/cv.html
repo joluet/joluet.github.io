@@ -82,7 +82,11 @@
 
     <h5 style="display: inline;">{{ skill.name }}</h5>:
     {% for item in skill.items %}
-    <span class="label label-info skills"> {{ item.name }} </span>
+        <span class="label label-info skills"> {{ item.name }} </span>
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'even' %}
+            </br>
+        {% endif %}
     {% endfor %}
 
     {% endfor %}
