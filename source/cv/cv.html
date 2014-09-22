@@ -87,7 +87,13 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <p>{{ item.summary }}</p>
+            <p>
+            <ul class="fa-ul">
+            {% for summarypoint in item.summarypoints %}
+            <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
+            {% endfor %}
+            </ul>
+            </p>
 
             {% for project in item.projects %}
             {% if project.link %}

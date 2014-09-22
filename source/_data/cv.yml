@@ -46,7 +46,7 @@ professional:
    start: 09/2014
    end: Present
    title: Android Developer
-   summary: 
+   summarypoints: 
    projects:
 
     - name: GoodBarber App Engine
@@ -60,7 +60,8 @@ professional:
    start: 04/2014
    end: 08/2014
    title: Android Developer
-   summary: WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br>Together with an other senior developer I developed the WunderCar Android app. We took over a small code base that was developed by an outsourcing company, refactored it and continued the implementation.
+   summarypoints:
+    - WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br>Together with an other senior developer I developed the WunderCar Android app. We took over a small code base that was developed by an outsourcing company, refactored it and continued the implementation.
 
    skills: 
     - Scrum
@@ -78,7 +79,10 @@ professional:
    start: 10/2013
    end: 04/2014
    title: Android Developer
-   summary: MyTaxi is one of the most successful startups in Germany. The main product is an app for calling a taxi.</br>I was working in an international product team that develops apps for the Daimler Mobility Solutions GmbH in the car sharing and public transportation sector. Here, I collaborated with three other Android developers, four iOS developers, one designer, one QA and two product owners.
+   summarypoints: 
+    - Successful startup, main product is an app for calling a taxi
+    - Collaborated in an international product team of twelve persons with three other Android developers
+    - Developed Apps in the car sharing and public transportation sector
 
    skills: 
     - Scrum
