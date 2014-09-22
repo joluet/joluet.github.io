@@ -30,12 +30,10 @@ skills:
     - name: GCM
     - name: MQTT
     - name: SQLITE
- - name: Continuous Integration
+ - name: Continuous Integration, VCS
    items:
     - name: Jenkins
     - name: Travis CI
- - name: VCS
-   items:
     - name: Git
     - name: Git Flow
 
