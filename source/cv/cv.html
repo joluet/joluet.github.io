@@ -80,7 +80,7 @@
 
     {% for skill in site.data.cv.skills %}
 
-    <h5>{{ skill.name }}</h5>
+    <h5 style="display: inline;">{{ skill.name }}</h5>:
     {% for item in skill.items %}
     <span class="label label-info skills"> {{ item.name }} </span>
     {% endfor %}
