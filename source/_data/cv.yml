@@ -51,6 +51,8 @@ professional:
 
     - name: GoodBarber App Engine
 
+   skills: 
+    - Scrum
 
  - name: WunderCar Mobility Soultions GmbH
    link: http://www.wundercar.org
@@ -58,12 +60,13 @@ professional:
    start: 04/2014
    end: 08/2014
    title: Android Developer
-   summary: WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br> Together with an other developer I developed the WunderCar Android app from scratch.
+   summary: WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br> 
+Together with an other senior developer I developed the WunderCar Android app. We took over a small code base that was developed by an outsourcing company, refactored it and continued the implementation.
 
    skills: 
-    - Continuous Integration
     - Scrum
-    - Testing
+    - Continuous Integration
+    - Unit and UI Testing
 
    projects:
     - name: WunderCar
@@ -76,21 +79,26 @@ professional:
    start: 10/2013
    end: 04/2014
    title: Android Developer
-   summary: MyTaxi is one of the most successful startups in Germany. The main product is an app for calling a taxi. I was working in an international product team that develops apps for the Daimler Mobility Solutions GmbH in the car sharing and public transportation sector.
+   summary: MyTaxi is one of the most successful startups in Germany. The main product is an app for calling a taxi.</br>
+I was working in an international product team that develops apps for the Daimler Mobility Solutions GmbH in the car sharing and public transportation sector. Here, I collaborated with three other Android developers, four iOS developers, one designer, one QA and two product owners.
+
    skills: 
-    - Continuous Integration
     - Scrum
-    - Testing
+    - Continuous Integration
+    - Unit and UI Testing
 
    projects:
 
     - name: Moovel
+      description: An app that combines transportation modes
       link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
     - name: car2go
+      description: The car2go sharing app
       link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
 
     - name: car2go Black
+      description: A car2go Black sharing app
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
 
