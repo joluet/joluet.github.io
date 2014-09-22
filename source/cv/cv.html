@@ -79,29 +79,37 @@
     <h3>Skills Focus and Technical Expertise</h3>
 
     {% for skill in site.data.cv.skills %}
-    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-    {% if thecycle == 'odd' %}
-        <div class="row">
-        <div class="col-xs-6">
-    {% endif %}
-    {% if thecycle == 'even' %}
-        <div class="col-xs-12">
-    {% endif %}
-    <h5 style="display: inline;">{{ skill.name }}</h5>:
-    {% if thecycle == 'odd' %}
-        <div class="col-xs-7">
-    {% endif %}
-    {% if thecycle == 'even' %}
-        <div class="col-xs-13">
-    {% endif %}
-    {% for item in skill.items %}
-        <span class="label label-info skills"> {{ item.name }} </span>
-    {% endfor %}
-        </div>
-        </div>
-    {% if thecycle == 'even' %}
-        </div>
-    {% endif %}
+            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+            {% if thecycle == 'odd' %}
+                <div class="row">
+                <div class="col-xs-6">
+            {% endif %}
+
+            {% if thecycle == 'even' %}
+                <div class="col-xs-12">
+            {% endif %}
+
+            <h5 style="display: inline;">{{ skill.name }}</h5>:
+            
+            </div>
+
+            {% if thecycle == 'odd' %}
+                <div class="col-xs-8">
+            {% endif %}
+
+            {% if thecycle == 'even' %}
+                <div class="col-xs-14">
+            {% endif %}
+
+            {% for item in skill.items %}
+                <span class="label label-info skills"> {{ item.name }} </span>
+            {% endfor %}
+
+                </div>
+
+            {% if thecycle == 'even' %}
+                </div>
+            {% endif %}
 
     {% endfor %}
 
