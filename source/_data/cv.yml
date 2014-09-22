@@ -61,7 +61,10 @@ professional:
    end: 08/2014
    title: Android Developer
    summarypoints:
-    - WunderCar is a very young startup that was founded in the beginning of 2014. The WunderCar app wants to enable people in big cities to share their cars and socialize. The concept is comparable to Lyft or Uber from the US. </br>Together with an other senior developer I developed the WunderCar Android app. We took over a small code base that was developed by an outsourcing company, refactored it and continued the implementation.
+    - Young startup founded in the end of 2013
+    - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
+    - International product team of six persons (one other senior Android developer)
+    - Took over a small code base that was developed by an outsourcing company
 
    skills: 
     - Scrum
@@ -80,8 +83,8 @@ professional:
    end: 04/2014
    title: Android Developer
    summarypoints: 
-    - Successful startup, main product is an app for calling a taxi
-    - Collaborated in an international product team of twelve persons with three other Android developers
+    - Successful startup, main product is a taxi-calling-app
+    - International product team of twelve persons (four Android developers)
     - Developed Apps in the car sharing and public transportation sector
 
    skills: 
