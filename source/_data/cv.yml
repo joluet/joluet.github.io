@@ -22,14 +22,12 @@ skills:
     - name: Calabash
     - name: Robolectric
     - name: Mockito
-
  - name: CI, VCS
    items:
     - name: Jenkins
     - name: Travis CI
     - name: Git
     - name: Git Flow
-
  - name: Others
    items:
     - name: Robo Guice
