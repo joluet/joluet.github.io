@@ -90,9 +90,9 @@
 
     {% for skill in site.data.cv.skills %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            {% if thecycle == 'even' %}
+            <!--{% if thecycle == 'even' %}-->
                 <div class="row">
-            {% endif %}
+            <!--{% endif %}-->
 
             <div class="col-xs-2 text-left nopadding" style="background-color:#ff0000; ">
 
@@ -108,9 +108,9 @@
 
             </div>
 
-            {% if thecycle == 'even' %}
+            <!--{% if thecycle == 'even' %}-->
                 </div>
-            {% endif %}
+            <!--{% endif %}-->
 
     {% endfor %}
 
