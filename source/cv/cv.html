@@ -35,6 +35,13 @@
 	    margin-bottom: 6px;
 	    margin-left: 0px;   
         }
+        h5{
+            padding: 0px;
+	    margin-top: 4px;
+	    margin-right: 0px;
+	    margin-bottom: 4px;
+	    margin-left: 0px;   
+        }
 
         hr{
             padding: 0px;
@@ -126,7 +133,7 @@
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
             </ul>
-
+            <h5>Worked on:</h5>
             {% for project in item.projects %}
             {% if project.link %}
             <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
