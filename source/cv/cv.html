@@ -134,10 +134,10 @@
             {% endfor %}
             </ul>
             <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                     <h5>Worked on:</h5>
                     </div>
-                    <div class="col-xs-9">
+                    <div class="col-xs-10">
                     {% for project in item.projects %}
                     {% if project.link %}
                     <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
