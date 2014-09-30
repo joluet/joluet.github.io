@@ -26,9 +26,7 @@
             font-size: 2em;
         }
 
-	td { 
-    	    padding: 10px;
-	}
+	
 
         h4{
             padding: 0px;
@@ -53,11 +51,11 @@
 <div class="container">
     <table border="0">
     <tr>
-    <td>
+    <td style="padding: 0px;">
 	<img src="{{ root_url }}/cv/me.jpg" style="width:150px;height:150px">
     </td>
     <td>
-    <div class="text-left">
+    <div class="text-left" style="padding: 10px;">
         <h1>{{ site.data.cv.name }}</h1>
         <h4><em>{{ site.data.cv.summary.text }}</em></h4>
         <table border="0" style="padding: 1px;">
