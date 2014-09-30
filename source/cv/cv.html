@@ -158,6 +158,51 @@
 
     <hr/>
 
+    <h4>Experience During Studies</h4>
+
+    {% for item in site.data.cv.preprofessional %}
+    <div class="row">
+        <div class="col-xs-6 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
+        </h4>
+        <h5><em>{{ item.title }}</em></h5>
+        </div>
+        <div class="col-xs-6 text-right">
+            <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
+            <h5>{{ item.location }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+            <ul class="fa-ul">
+            {% for summarypoint in item.summarypoints %}
+            <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
+            {% endfor %}
+            </ul>
+            {% if item.projects %}
+            <table>
+                    <tr>
+                    <td>
+                    <h5>Worked on:</h5>
+                    </td>
+                    <td>
+                    {% for project in item.projects %}
+                    {% if project.link %}
+                    <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
+                    {% else %}
+                    <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
+                    {% endif %}
+                    {% endfor %}
+                    </td>
+                    </tr>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <hr/>
+
     <h4>Education</h4>
     {% for college in site.data.cv.education.colleges %}
     <h4><strong>{{ college.field }}</strong></h4>
