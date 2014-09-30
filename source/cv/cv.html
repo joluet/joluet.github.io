@@ -147,11 +147,11 @@
 
     <hr/>
 
-    <h3>Education</h3 >
+    <h4>Education</h4>
     {% for college in site.data.cv.education.colleges %}
     <h4><strong>{{ college.field }}</strong></h4>
-    <h4><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h4>
-    <h4><em>{{ college.degree }}, {{ college.year }}</em></h4>
+    <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
+    <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
     {% endfor %}
 
     <hr/>
