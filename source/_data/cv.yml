@@ -8,14 +8,14 @@ summary:
  text: I am a passionate Software Developer.
 
 skills:
- - name: IDE, build tools 
+ - name: IDE, Build Tools 
    items:
     - name: Android Studio
     - name: Gradle
     - name: Eclipse
     - name: Ant
 
- - name: Testing
+ - name: Testing, Mocking
    items:
     - name: Espresso
     - name: Robotium
