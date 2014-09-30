@@ -65,10 +65,10 @@
 	<img src="{{ root_url }}/cv/me.jpg" style="width:150px;height:150px">
     </td>
     <td>
-    <div class="text-left" style="padding: 10px;">
+    <div class="text-left">
         <h1>{{ site.data.cv.name }}</h1>
         <h4><em>{{ site.data.cv.summary.text }}</em></h4>
-        <table border="0" style="padding: 1px;">
+        <table border="0" style="padding: 5px;">
 	<tr>
     	<td>
 	  <img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
@@ -133,11 +133,12 @@
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
             </ul>
-            <div class="row">
-                    <div class="col-xs-2">
+            <table>
+                    <tr>
+                    <td>
                     <h5>Worked on:</h5>
-                    </div>
-                    <div class="col-xs-10">
+                    </td>
+                    <td>
                     {% for project in item.projects %}
                     {% if project.link %}
                     <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
@@ -145,8 +146,9 @@
                     <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
                     {% endif %}
                     {% endfor %}
-                    </div>
-            </div>
+                    </td>
+                    </tr>
+            </table>
         </div>
     </div>
     {% endfor %}
