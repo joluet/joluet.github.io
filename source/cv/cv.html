@@ -136,7 +136,7 @@
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
             </ul>
-            <table style="padding: 0px;">
+            <table >
                     <tr>
                     <td>
                     <h5>Worked on:</h5>
@@ -174,13 +174,13 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <ul class="fa-ul">
+            <ul class="fa-ul" style="padding: 0px;">
             {% for summarypoint in item.summarypoints %}
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
             </ul>
             {% if item.projects %}
-            <table style="padding: 0px;">
+            <table  >
                     <tr>
                     <td>
                     <h5>Worked on:</h5>
