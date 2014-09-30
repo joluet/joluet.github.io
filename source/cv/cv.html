@@ -133,14 +133,20 @@
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
             </ul>
-            <h5>Worked on:</h5>
-            {% for project in item.projects %}
-            {% if project.link %}
-            <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
-            {% else %}
-            <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
-            {% endif %}
-            {% endfor %}
+            <div class="row">
+                    <div class="col-xs-3">
+                    <h5>Worked on:</h5>
+                    </div>
+                    <div class="col-xs-9">
+                    {% for project in item.projects %}
+                    {% if project.link %}
+                    <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
+                    {% else %}
+                    <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+            </div>
         </div>
     </div>
     {% endfor %}
