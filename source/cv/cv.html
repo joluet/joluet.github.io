@@ -90,11 +90,11 @@
 
     {% for skill in site.data.cv.skills %}
             <div class="row">
-                    <div class="col-xs-2" style="background-color:#ff0000; ">
+                    <div class="col-xs-2">
                         {{ skill.name }}:
                     </div>
 
-                    <div class="col-xs-10" style="background-color:#00ff00">
+                    <div class="col-xs-10">
                             {% for item in skill.items %}
                                 <span class="label label-info skills"> {{ item.name }} </span>
                             {% endfor %}
