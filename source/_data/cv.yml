@@ -120,7 +120,7 @@ preprofessional:
      - Actually not a nice app but I learned a lot
    projects:
      - name: restaurant-kritik.de
-       description: Read and write critiques for restaurants
+       description: An app to read and write critiques for restaurants
        link: https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en
  - name: Airbus Operations GmbH
    link: http://www.airbus.com/
