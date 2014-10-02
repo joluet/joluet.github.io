@@ -62,6 +62,16 @@
         .environment {
             margin-right: 1em;
         }
+
+        @media screen {
+            .noPrint{}
+            .noScreen{display:none;}
+        }
+
+        @media print {
+            .noPrint{display:none;}
+            .noScreen{}
+        }
     </style>
 </head>
 <body>
@@ -101,7 +111,7 @@
     </tr>
     </table>
 
-    <h4>Skills Focus and Technical Expertise</h4>
+    <h4><strong>Skills Focus and Technical Expertise</strong></h4>
 
     {% for skill in site.data.cv.skills %}
             <div class="row">
@@ -119,7 +129,7 @@
 
     <hr/>
 
-    <h4>Professional Experience</h4>
+    <h4><strong>Professional Experience</strong></h4>
 
     {% for item in site.data.cv.professional %}
     <div class="row top-buffer">
@@ -162,7 +172,7 @@
 
     <hr/>
 
-    <h4>Education</h4>
+    <h4><strong>Education</strong></h4>
     {% for college in site.data.cv.education.colleges %}
     <h4>{{ college.field }}</h4>
     <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
@@ -172,7 +182,7 @@
     <hr/>
     <div style="page-break-after:always"></div>
 
-    <h4>Experience During Studies</h4>
+    <h4><strong>Experience During Studies</strong></h4>
 
     {% for item in site.data.cv.preprofessional %}
     <div class="row top-buffer">
