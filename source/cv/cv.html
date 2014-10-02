@@ -186,8 +186,8 @@
 
     <hr/>
     <h4><strong>Education</strong></h4>
-    <div class="row top-buffer">
-        {% for college in site.data.cv.education.colleges %}
+    {% for college in site.data.cv.education.colleges %}
+        <div class="row top-buffer">
         <div class="col-xs-6 nohref">
             <h4><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h4>
             <h5>{{ college.field }}</h5>
@@ -197,8 +197,8 @@
             <h5><em>{{ college.start | date: "%b %Y" }} to {{ college.end | date: "%b %Y" }}</em></h5>
             <h5>{{ college.location }}</h5>
         </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 
     <hr/>
     <div style="page-break-after:auto"></div>
