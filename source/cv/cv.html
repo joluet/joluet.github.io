@@ -33,7 +33,7 @@
 
         h4{
             padding: 0px;
-	    margin-top: 6px;
+	    margin-top: 0px;
 	    margin-right: 0px;
 	    margin-bottom: 6px;
 	    margin-left: 0px;   
@@ -118,7 +118,7 @@
     <h4>Professional Experience</h4>
 
     {% for item in site.data.cv.professional %}
-    <div class="row">
+    <div class="row" syle="margin-top: 10px;">
         <div class="col-xs-6 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
         </h4>
         <h5><em>{{ item.title }}</em></h5>
