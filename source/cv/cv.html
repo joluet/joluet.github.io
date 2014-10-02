@@ -59,8 +59,9 @@
 	    margin-bottom: 10px;
 	    margin-left: 4px;   
         }
-        .nopadding {
+        ul {
             padding: 0px;
+            margin: 0px;
         }
 
         .top-buffer { 
@@ -162,7 +163,7 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <ul class="fa-ul no-padding">
+            <ul class="fa-ul">
             {% for summarypoint in item.summarypoints %}
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
