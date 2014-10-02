@@ -56,7 +56,7 @@
             padding: 0px;
 	    margin-top: 12px;
 	    margin-right: 4px;
-	    margin-bottom: 12px;
+	    margin-bottom: 10px;
 	    margin-left: 4px;   
         }
 
@@ -219,7 +219,7 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <ul class="fa-ul" style="padding: 0px;">
+            <ul class="fa-ul">
             {% for summarypoint in item.summarypoints %}
             <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
             {% endfor %}
@@ -252,7 +252,7 @@
     <div class="row top-buffer">
         {% for language in site.data.cv.languages %}
         <div class="col-xs-12">
-            <h5>{{ language.language }} ({{ language.level }})</h5>
+            <h5>{{ language.language }} <em>{{ language.level }}</em></h5>
         </div>
         {% endfor %}
     </div>
