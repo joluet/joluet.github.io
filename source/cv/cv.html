@@ -41,7 +41,7 @@
             padding: 0px;
 	    margin-top: 0px;
 	    margin-right: 0px;
-	    margin-bottom: 6px;
+	    margin-bottom: 0px;
 	    margin-left: 0px;   
         }
         h5{
@@ -185,13 +185,16 @@
     {% endfor %}
 
     <hr/>
-
-    <h4><strong>Education</strong></h4>
-    {% for college in site.data.cv.education.colleges %}
-    <h4>{{ college.field }}</h4>
-    <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
-    <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
-    {% endfor %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h4><strong>Education</strong></h4>
+            {% for college in site.data.cv.education.colleges %}
+            <h4>{{ college.field }}</h4>
+            <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
+            <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
+            {% endfor %}
+        </div>
+    </div>
 
     <hr/>
     <div style="page-break-after:auto"></div>
