@@ -138,11 +138,17 @@ education:
   - name: Hamburg University of Technology
     field: Computer Science and Engineering
     link: http://www.tuhh.de
+    location: Hamburg, Germany
+    start: 10/2011
+    end: 09/2013
     year: 2013
     degree: Master of Science
   - name: Hamburg University of Technology
     field: Computer Science and Engineering
     link: http://www.tuhh.de
+    location: Hamburg, Germany
+    start: 10/2008
+    end: 09/2011
     year: 2011
     degree: Bachelor of Science
 
