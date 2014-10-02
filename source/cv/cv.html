@@ -150,11 +150,11 @@
 
     {% for item in site.data.cv.professional %}
     <div class="row top-buffer">
-        <div class="col-xs-6 nohref">
+        <div class="col-xs-8 nohref">
             <h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a></h4>
             <h5><em>{{ item.title }}</em></h5>
         </div>
-        <div class="col-xs-6 text-right">
+        <div class="col-xs-4 text-right">
             <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
             <h5>{{ item.location }}</h5>
         </div>
@@ -191,12 +191,12 @@
     <h4><strong>Education</strong></h4>
     {% for college in site.data.cv.education.colleges %}
         <div class="row top-buffer">
-        <div class="col-xs-6 nohref">
+        <div class="col-xs-8 nohref">
             <h4><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h4>
             <h5>{{ college.field }}</h5>
             <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
         </div>
-        <div class="col-xs-6 text-right">
+        <div class="col-xs-4 text-right">
             <h5><em>{{ college.start | date: "%b %Y" }} to {{ college.end | date: "%b %Y" }}</em></h5>
             <h5>{{ college.location }}</h5>
         </div>
@@ -210,11 +210,11 @@
 
     {% for item in site.data.cv.preprofessional %}
     <div class="row top-buffer">
-        <div class="col-xs-6 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
+        <div class="col-xs-8 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
         </h4>
         <h5><em>{{ item.title }}</em></h5>
         </div>
-        <div class="col-xs-6 text-right">
+        <div class="col-xs-4 text-right">
             <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
             <h5>{{ item.location }}</h5>
         </div>
