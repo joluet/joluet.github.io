@@ -48,11 +48,17 @@
 
         hr{
             padding: 0px;
-            margin: 6px;    
+	    margin-top: 12px;
+	    margin-right: 4px;
+	    margin-bottom: 12px;
+	    margin-left: 4px;   
         }
 
         .top-buffer { 
             margin-top:20px; 
+        }
+        .small-top-buffer { 
+            margin-top:.5em; 
         }
 
         .skills {
@@ -81,11 +87,11 @@
     <td style="padding: 0px;">
 	<img src="{{ root_url }}/cv/me.jpg" style="width:150px;height:150px">
     </td>
-    <td>
+    <td style="padding: 10px;">
     <div class="text-left">
         <h1>{{ site.data.cv.name }}</h1>
         <h4><em>{{ site.data.cv.summary.text }}</em></h4>
-        <table border="0" style="padding: 5px;">
+        <table border="0" style="padding: 10px;">
 	<tr>
     	<td>
 	  <img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
@@ -114,7 +120,7 @@
     <h4><strong>Skills Focus and Technical Expertise</strong></h4>
 
     {% for skill in site.data.cv.skills %}
-            <div class="row">
+            <div class="row small-top-buffer">
                     <div class="col-xs-3">
                         {{ skill.name }}:
                     </div>
