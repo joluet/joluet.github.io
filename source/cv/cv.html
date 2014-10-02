@@ -248,6 +248,15 @@
 
     <hr/>
 
+    <h4><strong>Languages</strong></h4>
+    <div class="row top-buffer">
+        {% for language in site.data.cv.languages %}
+        <div class="col-xs-12">
+            <h5>{{ language.language }} ({{ language.level }})</h5>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 
 </body>

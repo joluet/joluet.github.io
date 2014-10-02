@@ -153,3 +153,12 @@ education:
     year: 2011
     degree: Bachelor of Science
 
+languages:
+ - language: German
+   level: mother tongue
+ - language: English
+   level: fluent
+ - language: French
+   level: B2
+
+
