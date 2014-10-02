@@ -61,7 +61,7 @@
         }
 
         .top-buffer { 
-            margin-top:14px; 
+            margin-top:12px; 
         }
         .small-top-buffer { 
             margin-top:.5em; 
@@ -147,9 +147,9 @@
 
     {% for item in site.data.cv.professional %}
     <div class="row top-buffer">
-        <div class="col-xs-6 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
-        </h4>
-        <h5><em>{{ item.title }}</em></h5>
+        <div class="col-xs-6 nohref">
+            <h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a></h4>
+            <h5><em>{{ item.title }}</em></h5>
         </div>
         <div class="col-xs-6 text-right">
             <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
@@ -187,17 +187,17 @@
     <hr/>
     <h4><strong>Education</strong></h4>
     <div class="row top-buffer">
+        {% for college in site.data.cv.education.colleges %}
         <div class="col-xs-6 nohref">
-            {% for college in site.data.cv.education.colleges %}
             <h4><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h4>
             <h5>{{ college.field }}</h5>
             <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
-            {% endfor %}
         </div>
         <div class="col-xs-6 text-right">
             <h5><em>{{ college.start | date: "%b %Y" }} to {{ college.end | date: "%b %Y" }}</em></h5>
             <h5>{{ college.location }}</h5>
         </div>
+        {% endfor %}
     </div>
 
     <hr/>
