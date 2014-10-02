@@ -47,10 +47,11 @@ professional:
    title: Android Developer
    summarypoints: 
      - App builder service
-     - Working on a highly customizable app
+     - Users can easily create custom styled content apps
    projects:
 
     - name: GoodBarber App Engine
+      description: A highly customizable app
       link: http://www.goodbarber.com
 
    skills: 
