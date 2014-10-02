@@ -158,6 +158,16 @@
 
     <hr/>
 
+    <h4>Education</h4>
+    {% for college in site.data.cv.education.colleges %}
+    <h4><strong>{{ college.field }}</strong></h4>
+    <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
+    <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
+    {% endfor %}
+
+    <hr/>
+    <div style="page-break-after:always"></div>
+
     <h4>Experience During Studies</h4>
 
     {% for item in site.data.cv.preprofessional %}
@@ -199,15 +209,6 @@
             {% endif %}
         </div>
     </div>
-    {% endfor %}
-
-    <hr/>
-
-    <h4>Education</h4>
-    {% for college in site.data.cv.education.colleges %}
-    <h4><strong>{{ college.field }}</strong></h4>
-    <h5><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h5>
-    <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
     {% endfor %}
 
     <hr/>
