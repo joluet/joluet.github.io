@@ -1,0 +1,272 @@
+---
+---
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.cv.name }}'s CV</title>
+    <meta name="author" content="{{ site.data.cv.name }}"/>
+    <meta name="description" content="{{ site.data.cv.name }}'s CV"/>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="print"/>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css' media='all'>
+    <style>
+        h1 {
+            font-family: 'Lusitana', sans-serif;
+            font-size: 2em;
+            padding: 0px;
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 6px;
+	    margin-left: 0px;  
+        }
+
+        td{
+            vertical-align: top;
+            padding: 5px; 
+        }
+	
+
+        h4{
+            padding: 0px;
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 0px;   
+        }
+        h5{
+            padding: 0px;
+	    margin-top: 4px;
+	    margin-right: 0px;
+	    margin-bottom: 4px;
+	    margin-left: 0px;   
+        }
+
+        hr{
+            padding: 0px;
+	    margin-top: 12px;
+	    margin-right: 4px;
+	    margin-bottom: 10px;
+	    margin-left: 4px;   
+        }
+        ul {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .top-buffer { 
+            margin-top:12px; 
+        }
+        .small-top-buffer { 
+            margin-top:.5em; 
+        }
+
+        .skills {
+            margin-right: .5em;
+            margin-bottom: .5em;
+        }
+        .environment {
+            margin-right: 1em;
+        }
+
+        @media screen {
+            .noPrint{}
+            .noScreen{display:none;}
+        }
+
+        @media print {
+            .noPrint{display:none;}
+            .noScreen{}
+        }
+
+        @page {
+            margin: 1cm 1cm;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table border="0">
+    <tr>
+    <td style="padding: 0px; vertical-align: bottom;">
+	<img src="{{ root_url }}/cv/me.jpg" style="width:150px;height:150px">
+    </td>
+    <td style="padding: 10px;">
+    <div class="text-left">
+        <h1>{{ site.data.cv.name }}</h1>
+        <h4><em>{{ site.data.cv.summary.text }}</em></h4>
+        <table border="0">
+	<tr>
+    	<td>
+	  <img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
+	  <a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a><br/>
+        </td>
+        <td>
+	  <img src="{{ root_url }}/cv/linkedin-2048-black.png" style="width:25px;height:25px">
+	  <a href="{{ site.data.cv.linkedin }}"> LinkedIn</a>
+        </td>
+        <tr>
+        <td>
+	  <img src="{{ root_url }}/cv/github.png" style="width:25px;height:25px">
+	  <a href="{{ site.data.cv.github }}"> GitHub</a><br/>
+        </td>
+        <td>
+	  <img src="{{ root_url }}/cv/icon_19489.png" style="width:25px;height:25px">
+	  <a href="{{ site.data.cv.blog }}"> Dev Blog</a>
+        </td>
+        </tr>
+        </table>
+    </div>
+    </td>
+    </tr>
+    </table>
+
+    <hr/>
+
+    <h4><strong>Skills Focus and Technical Expertise</strong></h4>
+
+    {% for skill in site.data.cv.skills %}
+            <div class="row small-top-buffer">
+                    <div class="col-xs-3">
+                        {{ skill.name }}:
+                    </div>
+
+                    <div class="col-xs-9">
+                            {% for item in skill.items %}
+                                <span class="label label-info skills"> {{ item.name }} </span>
+                            {% endfor %}
+                    </div>
+            </div>
+    {% endfor %}
+
+    <hr/>
+
+    <h4><strong>Professional Experience</strong></h4>
+
+    {% for item in site.data.cv.professional %}
+    <div class="row top-buffer">
+        <div class="col-xs-8 nohref">
+            <h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a></h4>
+            <h5><em>{{ item.title }}</em></h5>
+        </div>
+        <div class="col-xs-4 text-right">
+            <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
+            <h5>{{ item.location }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+            <ul class="fa-ul">
+            {% for summarypoint in item.summarypoints %}
+            <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
+            {% endfor %}
+            </ul>
+            <table >
+                    <tr>
+                    <td>
+                    <h5>Worked on:&nbsp;</h5>
+                    </td>
+                    <td>
+                    {% for project in item.projects %}
+                    {% if project.link %}
+                    <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
+                    {% else %}
+                    <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
+                    {% endif %}
+                    {% endfor %}
+                    </td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+
+    <hr/>
+    <h4><strong>Education</strong></h4>
+    {% for college in site.data.cv.education.colleges %}
+        <div class="row top-buffer">
+        <div class="col-xs-8 nohref">
+            <h4><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h4>
+            <h5>{{ college.field }}</h5>
+            <h5><em>{{ college.degree }}, {{ college.year }}</em></h5>
+        </div>
+        <div class="col-xs-4 text-right">
+            <h5><em>{{ college.start | date: "%b %Y" }} to {{ college.end | date: "%b %Y" }}</em></h5>
+            <h5>{{ college.location }}</h5>
+        </div>
+        </div>
+    {% endfor %}
+
+    <hr/>
+
+    <h4><strong>Experience During Studies</strong></h4>
+
+    {% for item in site.data.cv.preprofessional %}
+    <div class="row top-buffer">
+        <div class="col-xs-8 nohref"><h4><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
+        </h4>
+        <h5><em>{{ item.title }}</em></h5>
+        </div>
+        <div class="col-xs-4 text-right">
+            <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
+            <h5>{{ item.location }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+            <ul class="fa-ul">
+            {% for summarypoint in item.summarypoints %}
+            <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
+            {% endfor %}
+            </ul>
+            {% if item.projects %}
+            <table  >
+                    <tr>
+                    <td>
+                    <h5>Worked on:</h5>
+                    </td>
+                    <td>
+                    {% for project in item.projects %}
+                    {% if project.link %}
+                    <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
+                    {% else %}
+                    <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
+                    {% endif %}
+                    {% endfor %}
+                    </td>
+                    </tr>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <hr/>
+
+    <h4><strong>Languages</strong></h4>
+    <div class="row top-buffer">
+        {% for language in site.data.cv.languages %}
+        <div class="col-xs-12">
+            <h5>{{ language.language }}, <em>{{ language.level }}</em></h5>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</body>
+</html>
