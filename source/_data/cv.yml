@@ -31,19 +31,21 @@ skills:
     - name: Git Flow
  - name: Others
    items:
-    - name: Robo Guice
+    - name: Roboguice
+    - name: Dagger
     - name: RxJava
     - name: Retrofit
     - name: GCM
     - name: MQTT
     - name: SQLITE
+    - name: Mixpanel
 
 professional:
  - name: GoodBarber (DuoApps SARL)
    link: http://www.goodbarber.com
    location: Ajaccio, France
    start: 09/2014
-   end: present
+   end: 10/2014
    title: Android Developer
    summarypoints: 
      - App builder service
