@@ -41,6 +41,27 @@ skills:
     - name: Mixpanel
 
 professional:
+ - name: WunderCar Mobility Solutions GmbH
+   link: http://www.wundercar.org
+   location: Hamburg, Germany
+   start: 04/2014
+   end: Present
+   title: Android Developer (contract, remote)
+   summarypoints:
+    - Young startup founded in the end of 2013
+    - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
+    - International product team of six persons (one other senior Android developer)
+
+   skills: 
+    - Scrum
+    - Continuous Integration
+    - Unit and UI Testing
+
+   projects:
+    - name: WunderCar
+      description: A ride sharing app
+      link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
+
  - name: GoodBarber (DuoApps SARL)
    link: http://www.goodbarber.com
    location: Ajaccio, France
@@ -58,27 +79,6 @@ professional:
 
    skills: 
     - Scrum
-
- - name: WunderCar Mobility Solutions GmbH
-   link: http://www.wundercar.org
-   location: Hamburg, Germany
-   start: 04/2014
-   end: 08/2014
-   title: Android Developer
-   summarypoints:
-    - Young startup founded in the end of 2013
-    - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
-    - International product team of six persons (one other senior Android developer)
-
-   skills: 
-    - Scrum
-    - Continuous Integration
-    - Unit and UI Testing
-
-   projects:
-    - name: WunderCar
-      description: A ride sharing app
-      link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
  - name: MyTaxi (IntelligentApps GmbH)
    link: https://www.mytaxi.com
