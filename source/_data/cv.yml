@@ -35,7 +35,7 @@ professional:
    end: Present
    title: Android Developer
    description: >
-        Composed Tech Co. is a small autonomous product unit backed by Universal Music. It focuses on a classical music streaming service called Composed that launched in the end of 2014.
+        Composed Tech Co. is a small autonomous product unit inside Universal Music. It focuses on a classical music streaming service called Composed that launched in the end of 2014.
         As the only Android developer I'm responsible for the <a href="https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB">Composed Android app</a>.
  - name: Wunder
    link: http://www.wunder.org
@@ -55,17 +55,17 @@ professional:
    description: >
         MyTaxi is one of the most successful startups in Germany, their main product is a taxi app. Here, I've worked on the following apps:
           <a href="https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en">Moovel (urban navigation)</a>,
-          <a href="https://play.google.com/store/apps/details?id=com.car2go&hl=en">car2go (car sharing)</a> 
+          <a href="https://play.google.com/store/apps/details?id=com.car2go&hl=en">car2go (car sharing)</a>
           and <a href="https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en">car2go Black (car sharing)</a>.
  - name: Restaurant-Kritik.de (acquired by Yelp)
    link: http://www.restaurant-kritik.de
    location: Hamburg, Germany
    start: 12/2010
    end: 06/2013
-   title: Android Developer, part time, student
+   title: Android Developer, part time
    description: >
         Restaurant-Kritik was a German Startup dedicated to building a community for restaurant reviews.
-        It has been acquired by Yelp in 2015. I've developed the <a href="https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en">Restaurant-Kritik Android app</a> as a contractor.
+        It has been acquired by Yelp in 2015. I've developed the original Restaurant-Kritik Android app as a contractor.
 
 education:
  colleges:
@@ -89,7 +89,7 @@ education:
 personalprojects:
  - name: Compass Navigation for Android Wear
    link: http://www.wearnavigation.com/
-   description: A simple and beautiful bee line navigation app for Android Wear smartwatches.
+   description: A compass navigation app for Android Wear smartwatches.
  - name: FuelMeUp
    link: https://play.google.com/store/apps/details?id=de.fuelmeup
    description: An app that displays car sharing vehicles on a map and filters them by a maximum fuel level.
