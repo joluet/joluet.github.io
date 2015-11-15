@@ -1,0 +1,319 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Neatly Composing REST Calls Using Retrofit and RxJava - Jonas Lüthke</title>
+	<meta name="author" content="Jonas Lüthke">
+
+	
+	<meta name="description" content="Neatly Composing REST Calls Using Retrofit and RxJava This article shows how to use Retrofit together with RxJava and emphasizes the possiblity to &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Jonas Lüthke" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://joluet.github.io/blog/2014/07/07/rxjava-retrofit/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-53154900-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<img src="http://www.gravatar.com/avatar/f7ea9151e32a2a50f085cc5f94233656?s=160" alt="Profile Picture" style="width: 160px;" />
+	
+</div>
+
+
+<h1>
+  <a href="/">Jonas Lüthke</a>
+</h1>
+
+
+<p class="subtitle">
+  A developer's blog
+</p>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/cv">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/joluethke" title="Twitter">Twitter</a>
+		
+		
+			<a class="github" href="https://github.com/joluet" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Neatly Composing REST Calls Using Retrofit and RxJava</h1>
+	<div class="entry-content" itemprop="articleBody"><p>This article shows how to use <a href="http://square.github.io/retrofit/">Retrofit</a> together with <a href="https://github.com/Netflix/RxJava">RxJava</a> and emphasizes the possiblity to combine and chain REST calls using rxObservables to <strong>avoid ugly callback chains</strong>. It gives you a nice example of using RxJava in order to write less and cleaner code.</p>
+
+<!--more-->
+
+
+<h2>Example</h2>
+
+<p>At <a href="http://www.wundercar.org">WunderCar</a> our backend provides a pure REST API as communication interface for the mobile clients. For the Android app we decided to use Retrofit as communication client since it provides a very easy and clean way to communicate with REST interfaces.
+Due to our architecture we often have to chain api calls. For example we need to fetch the state of a user <em>after</em> the user has been successfully logged in. Using callbacks, this can lead to ugly nested callback chains:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">api</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="k">new</span> <span class="n">Callback</span><span class="o">&lt;</span><span class="n">ResponseBody</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>          <span class="nd">@Override</span>
+</span><span class='line'>            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">success</span><span class="o">(</span><span class="kd">final</span> <span class="n">ResponseBody</span> <span class="n">body</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Response</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="c1">// login was successful -&gt; ask for user state</span>
+</span><span class='line'>              <span class="n">api</span><span class="o">.</span><span class="na">getUserStatus</span><span class="o">(</span><span class="k">new</span> <span class="n">Callback</span><span class="o">&lt;</span><span class="n">UserStatus</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="nd">@Override</span>
+</span><span class='line'>                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">success</span><span class="o">(</span><span class="kd">final</span> <span class="n">UserStatus</span> <span class="n">status</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Response</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                      <span class="c1">// update UI according to user state</span>
+</span><span class='line'>                  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="o">...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>RxJava allows us to shorten this piece of code to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">eventAPI</span><span class="o">.</span><span class="na">login</span><span class="o">().</span>
+</span><span class='line'>  <span class="n">flatMap</span><span class="o">(</span><span class="n">status</span> <span class="o">-&gt;</span> <span class="n">api</span><span class="o">.</span><span class="na">getUserStatus</span><span class="o">()).</span> <span class="c1">// chain calls using flatMap</span>
+</span><span class='line'>    <span class="n">subscribe</span><span class="o">(</span><span class="n">onComplete</span><span class="o">,</span> <span class="n">onError</span><span class="o">);</span> <span class="c1">// action callbacks onComplete and onError</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: I use lambda expressions in the code snippets. This makes the code much more readable. Unfortunately, they are only available in Java 8. To be able to use them in Android with Java 7 you can include the retrolambda library like explained <a href="http://zserge.com/blog/android-lambda.html">here</a>.</p>
+
+<h2>RxJava</h2>
+
+<p>RxJava is an open source library that implements the <em><a href="https://rx.codeplex.com/">Reactive Extensions(Rx)</a></em>.
+The key class of Rx is the <em>Observable</em> that represents a model object for asynchronous data streams. Observables can be easily composed using different operators that are capable of filtering, selecting, transforming, combining and composing Observables.</p>
+
+<p>Practically, this means that Observables are aimed to fulfill asynchronous tasks like e.g. making an http call. One cool thing about Observables is the possibility to compose them to create new and more powerful Observables. See the <a href="https://github.com/Netflix/RxJava/wiki">RxJava Wiki</a> for a detailed introduction.</p>
+
+<h2>Retrofit and RxJava</h2>
+
+<p>I won&rsquo;t go into detail about Retrofit here. See <a href="http://square.github.io/retrofit/">square.github.io/retrofit</a> for an introduction. The important point is, Retrofit integrates RxJava and one can easily define http calls that return Observables using Retrofit:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@GET</span><span class="o">(</span><span class="s">&quot;/session.json&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="n">Observable</span><span class="o">&lt;</span><span class="n">LoginResponse</span><span class="o">&gt;</span> <span class="nf">login</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@GET</span><span class="o">(</span><span class="s">&quot;/user.json&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="n">Observable</span><span class="o">&lt;</span><span class="n">UserState</span><span class="o">&gt;</span> <span class="nf">getUserState</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Thus, we don&rsquo;t even need to create our own Observables. We can just compose the Observables provided by Retrofit. There are many possible compositions as described in the <a href="https://github.com/Netflix/RxJava/wiki/Observable">wiki</a>. In our case the <em>flatMap</em> as well as the <em>combineLatest</em> operators have been very useful:</p>
+
+<p><a href="http://netflix.github.io/RxJava/javadoc/rx/Observable.html#flatMap(rx.functions.Func1)">flatMap(func)</a> creates an Observable by applying a function that you supply to each item emitted by the original Observable. The function intself takes the items emitted by the original Observable as input and returns a new Observable.
+A very simple example where the supplied function doesn&rsquo;t use the items emitted by the original Observable:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">api</span><span class="o">.</span><span class="na">signUp</span><span class="o">(</span><span class="n">signUpData</span><span class="o">).</span>
+</span><span class='line'>  <span class="n">flatMap</span><span class="o">(</span><span class="n">successResponse</span> <span class="o">-&gt;</span> <span class="n">api</span><span class="o">.</span><span class="na">emailSignIn</span><span class="o">(</span><span class="n">signUpData</span><span class="o">.</span><span class="na">email</span><span class="o">,</span> <span class="n">signUpData</span><span class="o">.</span><span class="na">password</span><span class="o">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this example the original Observable does the sign up. After the successful sign up the second Observable tries to sign in the user. So the flatMap operator is used to <strong>chain two network calls and execute them one after another</strong>.</p>
+
+<p><a href="http://netflix.github.io/RxJava/javadoc/rx/Observable.html#combineLatest(java.util.List,%20rx.functions.FuncN)"><code>combineLatest(sources, combineFunction)</code></a> creates an Observable that emits the latest items that have be emitted by the source Observables. This is helpful when you want to execute multiple REST calls asynchronously and update the UI when <em>all</em> calls have finished.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Observable</span><span class="o">.</span><span class="na">combineLatest</span><span class="o">(</span><span class="n">api</span><span class="o">.</span><span class="na">fetchUserProfile</span><span class="o">(),</span> <span class="n">api</span><span class="o">.</span><span class="na">getUserState</span><span class="o">(),</span>
+</span><span class='line'><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">userStatus</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">user</span><span class="o">,</span> <span class="n">userStatus</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This simple example executes two asynchronous http calls. <strong>When both calls have returned, their results are emitted as a pair</strong>.</p>
+
+<h2>Threads and Lifecycle</h2>
+
+<p>In order to deal with the items that are emitted by an Observable you need to subscribe to it and provide two actions:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">login</span><span class="o">().</span><span class="na">subscribe</span><span class="o">(</span><span class="n">onComplete</span><span class="o">,</span> <span class="n">onError</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Actions are callback functions that are called in case the Observable has finished successfully or has emitted an error.</p>
+
+<p>If you don&rsquo;t assign threads to subscribe or observe on, Observables will just execute their code and deliver the results in the main thread. This is often not what you want. So be sure to call <code>subscribeOn()</code> on the Observable to define a scheduler that determines the thread to subscribe on, e.g. <code>subscribeOn( Schedulers.from( AsyncTask.THREAD_POOL_EXECUTOR ) )</code>. In addition you should define the thread for observation by calling e.g.  <code>observeOn( AndroidSchedulers.mainThread() )</code>.</p>
+
+<p>In Android we also have to think about the activity or fragment lifecycle. Often we want to change the UI when the an Observable emits new items. This is of course only possible if the fragment or activity is still alive. So we have to be sure to unsubscribe from the Observable when the fragment or activity is destroyed at the latest.</p>
+
+<p>Actually RxJava provides a convinience helper class that can prevent some lifecycle issues:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">AndroidObservable</span><span class="o">.</span><span class="na">bindActivity</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="n">Observable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">source</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>This helper will schedule the given sequence to be observed on the main UI thread and ensure that no notifications will be forwarded to the activity in case it is scheduled to finish.</p>
+
+<p>You should unsubscribe from the returned Observable in onDestroy at the latest, in order to not leak the activity or an inner subscriber.</p>
+
+<p>&mdash; <cite>excerpt from the associated source code comment</cite></p></blockquote>
+
+<p>So my reccomendation is to use the <code>AndroidObservable</code> helper to bind subscriptions to fragments or activities and to make sure that subscriptions are unsubscribed from in <code>onDestroy</code> at the latest.</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><div align="left"><a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a></div>
+
+Copyright &copy; 2015
+
+    Jonas Lüthke
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'joluet';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://joluet.github.io/blog/2014/07/07/rxjava-retrofit/';
+        var disqus_url = 'http://joluet.github.io/blog/2014/07/07/rxjava-retrofit/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
