@@ -9,7 +9,7 @@ summary:
  text: Passionate Software Developer.
 
 skills:
- - name: IDE, Build Tools 
+ - name: IDE, Build Tools
    items:
     - name: Android Studio
     - name: Gradle
@@ -41,18 +41,31 @@ skills:
     - name: Mixpanel
 
 professional:
- - name: WunderCar Mobility Solutions GmbH
+ - name: Universal Music Group
+   link: http://www.composed.com
+   location: London, United Kingdom
+   start: 11/2013
+   end: Present
+   title: Android Developer
+   summarypoints:
+     - bla
+   projects:
+     - name: Composed
+       description: A music streaming app for classical music
+       link: https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB
+
+ - name: WunderCar Mobility Solutions
    link: http://www.wundercar.org
    location: Hamburg, Germany
    start: 04/2014
-   end: Present
-   title: Android Developer (contract, remote)
+   end: 10/2014
+   title: Android Developer
    summarypoints:
     - Young startup founded in the end of 2013
     - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
     - International product team of six persons (one other senior Android developer)
 
-   skills: 
+   skills:
     - Scrum
     - Continuous Integration
     - Unit and UI Testing
@@ -62,36 +75,18 @@ professional:
       description: A ride sharing app
       link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
- - name: GoodBarber (DuoApps SARL)
-   link: http://www.goodbarber.com
-   location: Ajaccio, France
-   start: 09/2014
-   end: 10/2014
-   title: Android Developer
-   summarypoints: 
-     - App builder service
-     - Users can easily create custom styled content apps
-   projects:
-
-    - name: GoodBarber App Engine
-      description: A highly customizable app
-      link: http://www.goodbarber.com
-
-   skills: 
-    - Scrum
-
- - name: MyTaxi (IntelligentApps GmbH)
+ - name: MyTaxi
    link: https://www.mytaxi.com
    location: Hamburg, Germany
    start: 10/2013
    end: 04/2014
    title: Android Developer
-   summarypoints: 
+   summarypoints:
     - Successful startup, main product is a taxi-calling-app
     - International product team of twelve persons (four Android developers)
     - Developed Apps in the car sharing and public transportation sector
 
-   skills: 
+   skills:
     - Scrum
     - Continuous Integration
     - Unit and UI Testing
@@ -110,14 +105,13 @@ professional:
       description: The car2go Black car sharing app
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
-preprofessional:
  - name: Restaurant-Kritik.de (kabukiman Ltd.)
    link: http://www.restaurant-kritik.de
    location: Hamburg, Germany
    start: 12/2010
    end: 06/2013
-   title: Android Developer, Contract
-   summarypoints: 
+   title: Android Developer, part time, student
+   summarypoints:
      - First experiences with the Android SDK
      - Developing an Android app from scratch
      - Actually not a nice app but I learned a lot
@@ -125,16 +119,6 @@ preprofessional:
      - name: restaurant-kritik.de
        description: An app to read and write critiques for restaurants
        link: https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en
- - name: Airbus Operations GmbH
-   link: http://www.airbus.com/
-   location: Hamburg, Germany
-   start: 10/2008
-   end: 10/2013
-   title: Combined vocational training and degree program 
-   summarypoints: 
-     - Regularly working in different project teams beneath studies
-     - R&D, model based development using Eclipse Modeling Framework
-     - Airbus sponsored my studies in the scope of this program
 
 education:
  colleges:
@@ -162,5 +146,3 @@ languages:
    level: fluent
  - language: French
    level: B2
-
-
