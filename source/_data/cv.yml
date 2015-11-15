@@ -6,7 +6,7 @@ linkedin: http://www.linkedin.com/pub/jonas-luethke/97/b02/7a/
 github: http://github.com/joluet
 
 summary:
- text: Passionate Software Developer.
+ text: Software Developer.
 
 skills:
  - name: Methodology
@@ -14,46 +14,43 @@ skills:
     - name: Agile/Scrum
     - name: User Testing
     - name: User Interviews
-    - name: Continuous Integration
     - name: Data Analysis
+    - name: Continuous Integration
     - name: Unit/UI Testing
+    - name: Git Flow
 
- - name: Favourite libraries and tools
+ - name: Favourite libraries
    items:
     - name: Dagger
     - name: RxJava
     - name: Retrofit
-    - name: Git Flow
+    - name: Robolectric
+    - name: Mockito
 
 professional:
- - name: Universal Music Group
+ - name: Universal Music Group (Composed Tech Co.)
    link: http://www.composed.com
    location: London, United Kingdom
-   start: 11/2013
+   start: 11/2014
    end: Present
    title: Android Developer
    summarypoints:
-     - Composed is an autonomous product unit in Universal Music
-     - Iterated over the Composed classical music streaming app in a small agile product team
+     - Composed Tech Co. is an autonomous product unit in Universal Music
+     - Worked on a classical music streaming service in a small agile product team
    projects:
      - name: Composed
        description: a music streaming app for classical music
        link: https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB
 
- - name: WunderCar Mobility Solutions
-   link: http://www.wundercar.org
+ - name: Wunder
+   link: http://www.wunder.org
    location: Hamburg, Germany
    start: 04/2014
    end: 10/2014
    title: Android Developer
    summarypoints:
-    - Young startup founded in the end of 2013
-    - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
-
-   skills:
-    - Scrum
-    - Continuous Integration
-    - Unit and UI Testing
+    - Wunder is a young startup founded in the end of 2013
+    - Worked on the WunderCar app, a ride sharing app similar to Lyft or Uber
 
    projects:
     - name: WunderCar
@@ -68,38 +65,32 @@ professional:
    title: Android Developer
    summarypoints:
     - One of the most successful startups in Germany, main product is a taxi app
-    - Developed Apps in the car sharing and public transportation sector
-
-   skills:
-    - Scrum
-    - Continuous Integration
-    - Unit and UI Testing
+    - Worked on apps in the car sharing and public transportation sector
 
    projects:
-
     - name: Moovel
-      description: an app that combines transportation modes
+      description: urban navigation that combines transportation modes
       link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
     - name: car2go
-      description: the car2go car sharing app, similar to Zipcar
+      description: car sharing (similar to Zipcar)
       link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
 
     - name: car2go Black
-      description: the car2go Black car sharing app, similar to Zipcar
+      description: car sharing (similar to Zipcar)
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
- - name: Restaurant-Kritik.de (kabukiman Ltd.)
+ - name: Restaurant-Kritik.de (has been acquired by Yelp)
    link: http://www.restaurant-kritik.de
    location: Hamburg, Germany
    start: 12/2010
    end: 06/2013
    title: Android Developer, part time, student
    summarypoints:
-     - Developing a restaurant critique app from scratch based on client specification
+     - Developing a restaurant critique app from scratch based on client's specification
    projects:
      - name: restaurant-kritik.de
-       description: An app to read and write critiques for restaurants
+       description: read and write critiques for restaurants
        link: https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en
 
 education:
@@ -120,11 +111,3 @@ education:
     end: 09/2011
     year: 2011
     degree: Bachelor of Science
-
-languages:
- - language: German
-   level: mother tongue
- - language: English
-   level: fluent
- - language: French
-   level: B2

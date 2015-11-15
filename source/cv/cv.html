@@ -98,14 +98,16 @@
 </head>
 <body>
 <div class="container">
-    <table border="0">
+    <table border="1" width="100%">
     <tr>
     <td style="padding: 10px;">
     <div class="text-left">
         <h1>{{ site.data.cv.name }}</h1>
         <h4><em>{{ site.data.cv.summary.text }}</em></h4>
+
+      </div>
         <td>
-        <table border="0">
+        <table border="1" align="right">
 	<tr>
     	<td>
 	  <img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
@@ -127,7 +129,6 @@
         </tr>
         </table>
       </td>
-    </div>
     </td>
     </tr>
     </table>
@@ -188,7 +189,7 @@
                     {% endfor %}
                     </td>
                     </tr>
-            </table>
+            </table></br>
         </div>
     </div>
     {% endfor %}
@@ -208,17 +209,6 @@
         </div>
         </div>
     {% endfor %}
-
-    <hr/>
-
-    <h4><strong>Languages</strong></h4>
-    <div class="row top-buffer">
-        {% for language in site.data.cv.languages %}
-        <div class="col-xs-12">
-            <h5>{{ language.language }}, <em>{{ language.level }}</em></h5>
-        </div>
-        {% endfor %}
-    </div>
 
 </div>
 
