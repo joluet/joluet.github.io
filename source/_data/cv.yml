@@ -9,36 +9,21 @@ summary:
  text: Passionate Software Developer.
 
 skills:
- - name: IDE, Build Tools
+ - name: Methodology
    items:
-    - name: Android Studio
-    - name: Gradle
-    - name: Eclipse
-    - name: Ant
+    - name: Agile/Scrum
+    - name: User Testing
+    - name: User Interviews
+    - name: Continuous Integration
+    - name: Data Analysis
+    - name: Unit/UI Testing
 
- - name: Testing, Mocking
+ - name: Favourite libraries and tools
    items:
-    - name: Espresso
-    - name: Robotium
-    - name: Calabash
-    - name: Robolectric
-    - name: Mockito
- - name: CI, VCS
-   items:
-    - name: Jenkins
-    - name: Travis CI
-    - name: Git
-    - name: Git Flow
- - name: Others
-   items:
-    - name: Roboguice
     - name: Dagger
     - name: RxJava
     - name: Retrofit
-    - name: GCM
-    - name: MQTT
-    - name: SQLITE
-    - name: Mixpanel
+    - name: Git Flow
 
 professional:
  - name: Universal Music Group
@@ -48,10 +33,11 @@ professional:
    end: Present
    title: Android Developer
    summarypoints:
-     - bla
+     - Composed is an autonomous product unit in Universal Music
+     - Iterated over the Composed classical music streaming app in a small agile product team
    projects:
      - name: Composed
-       description: A music streaming app for classical music
+       description: a music streaming app for classical music
        link: https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB
 
  - name: WunderCar Mobility Solutions
@@ -63,7 +49,6 @@ professional:
    summarypoints:
     - Young startup founded in the end of 2013
     - WunderCar app allows people to share rides in big cities, comparable to Lyft or Uber
-    - International product team of six persons (one other senior Android developer)
 
    skills:
     - Scrum
@@ -72,7 +57,7 @@ professional:
 
    projects:
     - name: WunderCar
-      description: A ride sharing app
+      description: a ride sharing app
       link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
  - name: MyTaxi
@@ -82,8 +67,7 @@ professional:
    end: 04/2014
    title: Android Developer
    summarypoints:
-    - Successful startup, main product is a taxi-calling-app
-    - International product team of twelve persons (four Android developers)
+    - One of the most successful startups in Germany, main product is a taxi app
     - Developed Apps in the car sharing and public transportation sector
 
    skills:
@@ -94,15 +78,15 @@ professional:
    projects:
 
     - name: Moovel
-      description: An app that combines transportation modes
+      description: an app that combines transportation modes
       link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
     - name: car2go
-      description: The car2go car sharing app
+      description: the car2go car sharing app, similar to Zipcar
       link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
 
     - name: car2go Black
-      description: The car2go Black car sharing app
+      description: the car2go Black car sharing app, similar to Zipcar
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
  - name: Restaurant-Kritik.de (kabukiman Ltd.)
@@ -112,9 +96,7 @@ professional:
    end: 06/2013
    title: Android Developer, part time, student
    summarypoints:
-     - First experiences with the Android SDK
-     - Developing an Android app from scratch
-     - Actually not a nice app but I learned a lot
+     - Developing a restaurant critique app from scratch based on client specification
    projects:
      - name: restaurant-kritik.de
        description: An app to read and write critiques for restaurants
