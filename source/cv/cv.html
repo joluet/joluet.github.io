@@ -172,22 +172,15 @@
             {% for summarypoint in item.summarypoints %}
             {{ summarypoint }}</br>
             {% endfor %}
-            <table >
-                    <tr>
-                    <td>
-                      Here, I've worked on:&nbsp;
-                    </td>
-                    <td>
+            Here, I've worked on:
                     {% for project in item.projects %}
-                    {% if project.link %}
-                    <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a>, {{ project.description }}</h5>
-                    {% else %}
-                    <h5><strong>{{ project.name }}</strong>, {{ project.description }}</h5>
-                    {% endif %}
+                      {% if forloop.last == true %}
+                        <a href="{{ project.link }}"><strong>{{ project.name }}</strong></a> ({{ project.description }}),
+                      {% else %}
+                        <a href="{{ project.link }}"><strong>{{ project.name }}</strong></a> ({{ project.description }}).
+                      {% endif %}
                     {% endfor %}
-                    </td>
-                    </tr>
-            </table></br>
+                    </br>
         </div>
     </div>
     {% endfor %}
