@@ -34,13 +34,7 @@ professional:
    start: 11/2014
    end: Present
    title: Android Developer
-   summarypoints:
-     - Composed is a small autonomous product unit backed by Universal Music.
-     - The agile product team focuses on a classical music streaming service called Composed.
-   projects:
-     - name: Composed
-       description: classical music streaming
-       link: https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB
+   description: Composed Tech Co. is a small autonomous product unit backed by Universal Music. It focuses on a classical music streaming service called Composed that launched in the end of 2014. I'm responsible for the [Composed Android app](https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB).
 
  - name: Wunder
    link: http://www.wunder.org
@@ -48,14 +42,7 @@ professional:
    start: 04/2014
    end: 10/2014
    title: Android Developer
-   summarypoints:
-    - Wunder is a young startup founded in the end of 2013.
-    - The core product is a ride sharing app similar to Lyft or Uber.
-
-   projects:
-    - name: WunderCar
-      description: ride sharing
-      link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
+   description: Wunder is a young startup founded in the end of 2013. The core product is a ride sharing app similar to Lyft or Uber. Here, I've worked on the the [WunderCar Android app](https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en).
 
  - name: MyTaxi
    link: https://www.mytaxi.com
@@ -63,22 +50,7 @@ professional:
    start: 10/2013
    end: 04/2014
    title: Android Developer
-   summarypoints:
-    - MyTaxi is one of the most successful startups in Germany, their main product is a taxi app.
-    - Additionally, they develop other apps for car sharing services and the public transportation sector.
-
-   projects:
-    - name: Moovel
-      description: urban navigation
-      link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
-
-    - name: car2go
-      description: car sharing
-      link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
-
-    - name: car2go Black
-      description: car sharing
-      link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
+   description: MyTaxi is one of the most successful startups in Germany, their main product is a taxi app. Here, I've worked on the following apps: [Moovel](https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en)(urban navigation), [car2go](https://play.google.com/store/apps/details?id=com.car2go&hl=en)(car sharing) and [car2go Black](https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en)(car sharing).
 
  - name: Restaurant-Kritik.de (acquired by Yelp)
    link: http://www.restaurant-kritik.de
@@ -86,13 +58,7 @@ professional:
    start: 12/2010
    end: 06/2013
    title: Android Developer, part time, student
-   summarypoints:
-     - Restaurant-Kritik was a German Startup that dedicated to building a community for restaurant reviews.
-     - It has been acquired by Yelp in 2015.
-   projects:
-     - name: restaurant-kritik.de
-       description: restaurant critique community
-       link: https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en
+   description: Restaurant-Kritik was a German Startup dedicated to building a community for restaurant reviews. It has been acquired by Yelp in 2015. I've developed the [Restaurant-Kritik Android app](https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en) as a contractor.
 
 education:
  colleges:

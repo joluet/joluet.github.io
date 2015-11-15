@@ -170,19 +170,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            {% for summarypoint in item.summarypoints %}
-            {{ summarypoint }}</br>
-            {% endfor %}
-            Here, I've worked on
-                    {% for project in item.projects %}
-                      {% if forloop.last == true %}
-                        <a href="{{ project.link }}"><strong>{{ project.name }}</strong></a> ({{ project.description }}).
-                      {% else %}
-                        <a href="{{ project.link }}"><strong>{{ project.name }}</strong></a> ({{ project.description }}),
-                      {% endif %}
-                    {% endfor %}
-                    </br>
-                    </br>
+            {{item.description}}
         </div>
     </div>
     {% endfor %}
