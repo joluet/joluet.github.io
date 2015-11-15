@@ -98,7 +98,7 @@
 </head>
 <body>
 <div class="container">
-    <table border="1" width="100%">
+    <table border="0" width="100%">
     <tr>
     <td style="padding: 10px;">
     <div class="text-left">
@@ -107,7 +107,7 @@
 
       </div>
         <td>
-        <table border="1" align="right">
+        <table border="0" align="right">
 	<tr>
     	<td>
 	  <img src="{{ root_url }}/cv/icon_4424.png" style="width:25px;height:25px">
@@ -169,11 +169,10 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <ul class="fa-ul">
+
             {% for summarypoint in item.summarypoints %}
-            <li><i class="fa-li fa fa-square"></i> {{ summarypoint }} </li>
+            {{ summarypoint }}</br>
             {% endfor %}
-            </ul>
             <table >
                     <tr>
                     <td>
