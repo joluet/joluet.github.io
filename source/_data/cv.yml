@@ -35,10 +35,11 @@ professional:
    end: Present
    title: Android Developer
    summarypoints:
-     - Composed Tech Co. is a small autonomous product unit backed by Universal Music.
+     - Composed is a small autonomous product unit backed by Universal Music.
+     - The agile product team focuses on a classical music streaming service called Composed.
    projects:
      - name: Composed
-       description: a music streaming app for classical music
+       description: classical music streaming
        link: https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB
 
  - name: Wunder
@@ -53,7 +54,7 @@ professional:
 
    projects:
     - name: WunderCar
-      description: ride sharing app
+      description: ride sharing
       link: https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en
 
  - name: MyTaxi
@@ -63,20 +64,20 @@ professional:
    end: 04/2014
    title: Android Developer
    summarypoints:
-    - MyTaxi is one of the most successful startups in Germany, main product is a taxi app.
-    - Additionally, they develop other apps for car sharing and the public transportation sector.
+    - MyTaxi is one of the most successful startups in Germany, their main product is a taxi app.
+    - Additionally, they develop other apps for car sharing services and the public transportation sector.
 
    projects:
     - name: Moovel
-      description: urban navigation that combines transportation modes
+      description: urban navigation
       link: https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en
 
     - name: car2go
-      description: car sharing (similar to Zipcar)
+      description: car sharing
       link: https://play.google.com/store/apps/details?id=com.car2go&hl=en
 
     - name: car2go Black
-      description: car sharing (similar to Zipcar)
+      description: car sharing
       link: https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en
 
  - name: Restaurant-Kritik.de (acquired by Yelp)
@@ -86,11 +87,11 @@ professional:
    end: 06/2013
    title: Android Developer, part time, student
    summarypoints:
-     - Restaurant-Kritik was a German Startup that has build a community for restaurant reviews.
+     - Restaurant-Kritik was a German Startup that dedicated to building a community for restaurant reviews.
      - It has been acquired by Yelp in 2015.
    projects:
      - name: restaurant-kritik.de
-       description: read and write critiques for restaurants
+       description: restaurant critique community
        link: https://play.google.com/store/apps/details?id=de.restaurantkritik&hl=en
 
 education:

@@ -166,17 +166,16 @@
             <h5>{{ item.location }}</h5>
         </div>
     </div>
+    </br>
     <div class="row">
         <div class="col-xs-12">
-
-
             {% for summarypoint in item.summarypoints %}
             {{ summarypoint }}</br>
             {% endfor %}
             <table >
                     <tr>
                     <td>
-                    <h5>Worked on:&nbsp;</h5>
+                      Here, I've worked on:&nbsp;
                     </td>
                     <td>
                     {% for project in item.projects %}
