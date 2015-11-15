@@ -38,6 +38,7 @@ professional:
         Composed Tech Co. is a small autonomous product unit backed by Universal Music. It focuses on a classical music streaming service called Composed that launched in the end of 2014.
         As the only Android developer I'm responsible for the <a href="https://play.google.com/store/apps/details?id=com.composed.app&hl=en_GB">Composed Android app</a>.
 
+
  - name: Wunder
    link: http://www.wunder.org
    location: Hamburg, Germany
@@ -47,6 +48,7 @@ professional:
    description: >
         Wunder is a young startup founded in the end of 2013. The core product is a ride sharing app similar to Lyft or Uber.
         Here, I've worked on the the <a href="https://play.google.com/store/apps/details?id=org.wundercar.android&hl=en>WunderCar Android app</a>.
+
 
  - name: MyTaxi
    link: https://www.mytaxi.com
@@ -59,6 +61,7 @@ professional:
           <a href="https://play.google.com/store/apps/details?id=com.daimler.moovel.android&hl=en>Moovel (urban navigation)</a>
           <a href="https://play.google.com/store/apps/details?id=com.car2go&hl=en>car2go (car sharing)</a>
           and <a href="https://play.google.com/store/apps/details?id=com.daimler.car2goblack.android&hl=en">car2go Black (car sharing)</a>.
+
 
  - name: Restaurant-Kritik.de (acquired by Yelp)
    link: http://www.restaurant-kritik.de
