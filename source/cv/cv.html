@@ -210,6 +210,17 @@
         </div>
     {% endfor %}
 
+    <hr/>
+    <h4><strong>Personal Projects</strong></h4>
+    {% for personalproject in site.data.cv.personalprojects %}
+        <div class="row top-buffer">
+        <div class="col-xs-12 nohref">
+            <h4><a href="{{ personalproject.link }}"><strong>{{ personalproject.name }}</strong></a></h4>
+            <h5>{{ personalproject.description }}</h5>
+        </div>
+        </div>
+    {% endfor %}
+
 </div>
 
 </body>

@@ -111,3 +111,11 @@ education:
     end: 09/2011
     year: 2011
     degree: Bachelor of Science
+
+personalprojects:
+ - name: Compass Navigation for Android Wear
+   link: http://www.wearnavigation.com/
+   description: A simple and beautiful compass navigation app for Android Wear smartwatches.
+ - name: FuelMeUp
+   link: https://play.google.com/store/apps/details?id=de.fuelmeup
+   description: Displays car sharing vehicles of Drive Now and Car2go on a map and filters them by a maximum fuel level.
