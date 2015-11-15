@@ -195,6 +195,17 @@
     {% endfor %}
 
     <hr/>
+    <h4><strong>Personal Projects</strong></h4>
+    {% for personalproject in site.data.cv.personalprojects %}
+        <div class="row top-buffer">
+        <div class="col-xs-12 nohref">
+            <h4><a href="{{ personalproject.link }}"><strong>{{ personalproject.name }}</strong></a></h4>
+            <h5>{{ personalproject.description }}</h5>
+        </div>
+        </div>
+    {% endfor %}
+
+    <hr/>
     <h4><strong>Education</strong></h4>
     {% for college in site.data.cv.education.colleges %}
         <div class="row top-buffer">
@@ -206,17 +217,6 @@
         <div class="col-xs-4 text-right">
             <h5><em>{{ college.start | date: "%b %Y" }} to {{ college.end | date: "%b %Y" }}</em></h5>
             <h5>{{ college.location }}</h5>
-        </div>
-        </div>
-    {% endfor %}
-
-    <hr/>
-    <h4><strong>Personal Projects</strong></h4>
-    {% for personalproject in site.data.cv.personalprojects %}
-        <div class="row top-buffer">
-        <div class="col-xs-12 nohref">
-            <h4><a href="{{ personalproject.link }}"><strong>{{ personalproject.name }}</strong></a></h4>
-            <h5>{{ personalproject.description }}</h5>
         </div>
         </div>
     {% endfor %}
